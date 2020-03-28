@@ -17,8 +17,12 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop', '~> 0.80.1', require: false
+  gem 'rubocop-rails', '~> 2.5'
+  gem 'rubocop-performance', '~> 1.5.2'
 end
 
 group :development do
