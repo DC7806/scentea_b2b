@@ -2,13 +2,21 @@
   "name": "rails_6_base",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.9.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "turbolinks": "^5.2.0"
+    "classlist-polyfill": "^1.2.0",
+    "core-js": "^3.6.4",
+    "element-remove": "^1.0.4",
+    "regenerator-runtime": "^0.13.5",
+    "url-polyfill": "^1.1.8",
+    "webpack": "^4.42.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "webpack-dev-server": "^3.10.3"
   }
 }
