@@ -228,6 +228,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    shoulda-matchers (4.3.0)
+      activesupport (>= 4.2.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -298,6 +300,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.5.2)
   rubocop-rails (~> 2.5)
   sass-rails (>= 6)
+  shoulda-matchers (~> 4.3.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   strong_migrations
