@@ -29,6 +29,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate', '~> 3.0.3'
   gem 'bullet', '~> 6.1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
