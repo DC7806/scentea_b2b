@@ -6,6 +6,7 @@ AllCops:
   TargetRubyVersion: 2.6x
   Exclude:
     - 'bin/*'
+    - '**/vendor/**/*'
     - 'config/**/*'
     - 'db/migrate/**/*'
     - 'db/schema.rb'
