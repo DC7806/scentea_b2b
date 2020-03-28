@@ -24,6 +24,8 @@ gem 'strong_migrations'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', '~> 2.7.5'
+  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'faker', '~> 2.11'
   gem 'rubocop', '~> 0.80.1', require: false
   gem 'rubocop-performance', '~> 1.5.2'
   gem 'rubocop-rails', '~> 2.5'
@@ -36,6 +38,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :test do
+  gem 'capybara', '~> 3.31.0'
+  gem 'database_cleaner', '~> 1.8.3'
+  gem 'rspec-rails', '~> 4.0'
+  gem 'shoulda-matchers', '~> 4.3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
