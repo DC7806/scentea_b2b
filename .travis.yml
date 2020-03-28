@@ -1,0 +1,37 @@
+language: ruby
+
+rvm:
+ - 2.6.3
+
+services:
+  - postgresql
+
+dist: trusty
+
+sudo: required
+
+addons:
+  postgresql: "9.6"
+  chrome: stable
+
+bundler_args: "--without development --deployment"
+
+cache: bundler
+
+before_install:
+  - gem install bundler -v 2.1.4
+  - nvm install 8.16.2
+  - npm install -g yarn
+
+before_script:
+  - yarn
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+
+script:
+  - yarn
+  - yarn run eslint ./app/javascript
+  - RAILS_ENV=test ./bin/rails webpacker:compile
+  - bundle exec rubocop
+  - bundle exec rspec
