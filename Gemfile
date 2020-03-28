@@ -24,6 +24,7 @@ gem 'strong_migrations'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', '~> 2.7.5'
+  gem 'faker', '~> 2.11'
   gem 'rubocop', '~> 0.80.1', require: false
   gem 'rubocop-performance', '~> 1.5.2'
   gem 'rubocop-rails', '~> 2.5'
