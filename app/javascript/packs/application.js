@@ -12,7 +12,8 @@
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-
 require('@rails/ujs').start()
+
+import 'jquery'
 
 import '../stylesheets/application.scss'

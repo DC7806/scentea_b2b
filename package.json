@@ -10,6 +10,8 @@
     "classlist-polyfill": "^1.2.0",
     "core-js": "^3.6.4",
     "element-remove": "^1.0.4",
+    "expose-loader": "^0.7.5",
+    "jquery": "^3.4.1",
     "regenerator-runtime": "^0.13.5",
     "url-polyfill": "^1.1.8",
     "webpack": "^4.42.1",
