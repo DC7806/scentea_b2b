@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :admin_users
+
+  root to: 'pages#index'
+
+  namespace :admin, path: ENV['ADMIN_PATH'] do
+    root to: 'pages#index'
+  end
 end
