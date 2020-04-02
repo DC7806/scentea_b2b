@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title
+      | Rails6Base
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'backend', media: 'all'
+    = javascript_pack_tag 'backend', defer: true
+  body
+    section#container
+      = render 'backend/header'
+      = render 'backend/sidebar'
+      section#main-content
+        section.wrapper.site-min-height
+          = yield
