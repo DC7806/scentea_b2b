@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+  devise_for :admin_users,
+             controllers: {
+               sessions: 'admin_users/sessions',
+               passwords: 'admin_users/passwords'
+             }
 
   root to: 'pages#index'
 
