@@ -1,0 +1,19 @@
+zh-TW:
+  admin_users:
+    sessions:
+      new:
+        title: 登入
+    passwords:
+      new:
+        title: 忘記密碼？
+      edit:
+        title: 重置密碼
+        new_password: 輸入新密碼（6碼以上）
+
+  utilities:
+    buttons:
+      confirm: 確認
+      cancel: 取消
+      log_in: 登入
+      log_out: 登出
+      forget_password: 忘記密碼？
