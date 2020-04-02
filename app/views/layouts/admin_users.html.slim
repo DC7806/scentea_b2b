@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title
+      | Rails6Base
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+  body.bg-dark
+    = render 'admin_users/shared/notification', message: flash[:alert] if flash[:alert]
+    = render 'admin_users/shared/notification', message: flash[:notice] if flash[:notice]
+    .container
+      .vh-100.d-flex.flex-column.justify-content-around
+        .d-flex.justify-content-around
+          = yield
