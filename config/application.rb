@@ -31,5 +31,8 @@ module Rails6Base
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+    config.i18n.default_locale = :'zh-TW'
   end
 end

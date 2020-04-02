@@ -1,0 +1,19 @@
+en:
+  admin_users:
+    sessions:
+      new:
+        title: Login
+    passwords:
+      new:
+        title: Forget Password?
+      edit:
+        title: Reset Password
+        new_password: New Password (6 characters minimum)
+
+  utilities:
+    buttons:
+      confirm: Confirm
+      cancel: Cancel
+      log_in: Log In
+      log_out: Log Out
+      forget_password: Forget Password?
