@@ -1,4 +1,8 @@
 @media (min-width: 980px) {
+  .wrapper {
+    padding-top: 160px;
+  }
+
   .custom-bar-chart {
     margin-bottom: 40px;
   }
@@ -356,10 +360,6 @@
     margin-bottom: 40px;
   }
 
-  /*menu icon plus minus*/
-  .dcjq-icon {
-    /*top: 10px;*/
-  }
   ul.sidebar-menu li ul.sub li a {
     padding: 0;
   }
