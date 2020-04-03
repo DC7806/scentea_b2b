@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin, path: ENV['ADMIN_PATH'] do
     root to: 'pages#index'
+
+    resource :admin_users, only: %i[edit update], as: :user
   end
 end
