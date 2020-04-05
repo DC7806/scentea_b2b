@@ -1,0 +1,29 @@
+#notification {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 999999;
+
+  &.success {
+    background-color: rgba(0,255,0, 0.8);
+  }
+
+  &.fail {
+    background-color: rgba(255,0,0, 0.8);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #notification {
+    width: unset;
+    min-width: 180px;
+    padding: 20px;
+    top: 70px;
+    right: 20px;
+  }
+}

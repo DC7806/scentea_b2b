@@ -1,0 +1,8 @@
+zh-TW:
+  actions:
+    create: 新增
+    update: 更新
+
+  notices:
+    success: 成功
+    fail: 失敗

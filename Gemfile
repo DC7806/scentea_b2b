@@ -18,6 +18,7 @@ gem 'webpacker', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'simple_form', '~> 5.0.2'
 gem 'slim', '~> 4.0.1'
 
 gem 'strong_migrations'
