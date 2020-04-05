@@ -6,7 +6,7 @@ header.header.white-bg
   .top-nav
     ul.nav.pull-right.top-menu
       li
-        a[href="#"]
+        = link_to edit_admin_user_path
           i.fa.fa-cog
       li
         = link_to destroy_admin_user_session_path, method: :delete

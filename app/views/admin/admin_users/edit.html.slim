@@ -1,0 +1,11 @@
+.d-flex.justify-content-around
+  section.card.col-sm-10.col-xl-6
+    header.card-header
+      = "#{t(action_name)} #{@admin_user.class.model_name.human}"
+    .card-body
+      = simple_form_for(@admin_user, url: admin_user_path, wrapper: :horizontal_form) do |f|
+        = f.input :email, pattern: true
+        = f.input :password
+        = f.input :password_confirmation
+        .form-group
+        = f.button :submit, class: 'btn btn-block btn-primary'

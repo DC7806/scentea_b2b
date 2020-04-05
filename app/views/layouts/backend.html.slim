@@ -13,5 +13,7 @@ html
       = render 'backend/header'
       = render 'backend/sidebar'
       section#main-content
+        - if flash[:notice] || flash[:alert]
+          = render 'backend/notification'
         section.wrapper.site-min-height
           = yield

@@ -1,4 +1,7 @@
 en:
+  new: Create
+  edit: Edit
+  update: Update
   admin_users:
     sessions:
       new:

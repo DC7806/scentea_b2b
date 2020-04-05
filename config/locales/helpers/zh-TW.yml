@@ -1,0 +1,5 @@
+zh-TW:
+  helpers:
+    submit:
+      create: 新增
+      update: 更新
