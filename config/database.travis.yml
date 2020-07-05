@@ -1,5 +1,5 @@
 test:
   adapter: postgresql
-  database: rails_6_base_test
+  database: scentea_b2b_test
   username: travis
   encoding: utf8
