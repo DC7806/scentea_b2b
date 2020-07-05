@@ -20,7 +20,7 @@ cache: bundler
 
 before_install:
   - gem install bundler -v 2.1.4
-  - nvm install 8.16.2
+  - nvm install 10.13.0
   - npm install -g yarn
 
 before_script:
