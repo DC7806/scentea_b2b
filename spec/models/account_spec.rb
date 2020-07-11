@@ -25,6 +25,10 @@
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
+  describe 'associations' do
+    it { should have_one(:user).dependent(:restrict_with_exception) }
+  end
+
   describe 'validations' do
     subject { create(:account) }
 

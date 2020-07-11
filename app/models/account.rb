@@ -26,6 +26,8 @@ class Account < ApplicationRecord
   enum region: { domestic: 0, foreign: 1 }
   enum status: { created: 0, pending: 1, active: 2 }
 
+  has_one :user, dependent: :restrict_with_exception
+
   validates :contact_email, presence: true
   validates :region,        presence: true
   validates :status,        presence: true

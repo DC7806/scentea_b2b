@@ -3,10 +3,8 @@ en:
     models:
       account: Account
       admin_user: Admin User
+      user: User
     attributes:
-      admin_user:
-        password: Password
-        password_confirmation: Password Confirmation
       account:
         address: Address
         brand_name: Brand Name
@@ -23,6 +21,13 @@ en:
         created: Created
         pending: Pending
         active: Active
+      admin_user:
+        password: Password
+        password_confirmation: Password Confirmation
+      user:
+        email: Email
+        first_name: First Name
+        last_name: Last Name
     errors:
       messages:
         blank: is required

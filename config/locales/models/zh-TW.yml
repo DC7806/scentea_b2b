@@ -3,6 +3,7 @@ zh-TW:
     models:
       account: 帳戶
       admin_user: 後台管理者
+      user: 使用者
     attributes:
       admin_user:
         password: 密碼
@@ -23,6 +24,10 @@ zh-TW:
         created: 建立
         pending: 待審
         active: 啟用
+      user:
+        email: 信箱
+        first_name: 名
+        last_name: 姓
     errors:
       messages:
         blank: 為必填項目
