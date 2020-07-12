@@ -1,5 +1,7 @@
 zh-TW:
   activerecord:
+    created_at: 建立日期
+    updated_at: 修改日期
     models:
       account: 帳戶
       admin_user: 後台管理者

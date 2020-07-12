@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     root to: 'pages#index'
 
     resource :admin_users, only: %i[edit update], as: :user
+
+    resources :accounts, only: %i[index edit update]
   end
 end

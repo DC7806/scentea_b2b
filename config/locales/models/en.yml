@@ -1,5 +1,7 @@
 en:
   activerecord:
+    created_at: Created At
+    updated_at: Updated At
     models:
       account: Account
       admin_user: Admin User

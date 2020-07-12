@@ -1,7 +1,7 @@
 .d-flex.justify-content-around
-  section.card.col-sm-10.col-xl-6
+  section.card.col-12
     header.card-header
-      = "#{t(action_name)} #{@admin_user.class.model_name.human}"
+      = t(action_name, resource: t('activerecord.models.admin_user'))
     .card-body
       = simple_form_for(@admin_user, url: admin_user_path, wrapper: :horizontal_form) do |f|
         = f.input :email, pattern: true

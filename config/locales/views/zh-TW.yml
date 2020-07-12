@@ -1,7 +1,8 @@
 zh-TW:
-  new: 新增
-  edit: 編輯
-  update: 編輯
+  new: "新增 %{resource}"
+  edit: "編輯 %{resource}"
+  index: "%{resource}列表"
+  update: "編輯 %{resource}"
   admin_users:
     sessions:
       new:
@@ -12,11 +13,21 @@ zh-TW:
       edit:
         title: 重置密碼
         new_password: 輸入新密碼（6碼以上）
+  admin:
+    accounts:
+      edit:
+        account_info: 帳戶資訊
+        user_info: 使用者資訊
 
   utilities:
     buttons:
-      confirm: 確認
+      back: 返回
       cancel: 取消
+      confirm: 確認
+      close: 關閉
+      delete: 刪除
+      forget_password: 忘記密碼？
       log_in: 登入
       log_out: 登出
-      forget_password: 忘記密碼？
+    alerts:
+      delete_confirmation: 確認刪除？
