@@ -1,0 +1,20 @@
+.pagination {
+  font-size: 1.2em;
+
+  .page-item.active {
+    .page-link {
+      background: none;
+      color: $default_color;
+      border-bottom: 1px solid $default_color;
+    }
+  }
+
+  .page-link {
+    color: $default_color;
+    border: none;
+
+    &:hover {
+      background: none;
+    }
+  }
+}

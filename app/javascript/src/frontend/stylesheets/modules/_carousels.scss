@@ -1,0 +1,14 @@
+.carousels {
+  .btn {
+    background: unset;
+    border: 2px solid white;
+    border-radius: unset;
+    font-size: 20px;
+
+    &:hover {
+      color: #777;
+      background: white;
+      border: unset;
+    }
+  }
+}
