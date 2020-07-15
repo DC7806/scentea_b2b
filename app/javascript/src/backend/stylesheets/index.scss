@@ -1,0 +1,18 @@
+// Packages
+$fa-font-path: "~font-awesome/fonts";
+
+@import "bootstrap/scss/bootstrap";
+@import "~font-awesome/scss/font-awesome";
+
+// Libs
+@import "./lib/bootstrap-reset";
+@import "./lib/slidebars";
+@import "./lib/navbar-fixed-top";
+@import "./lib/table-responsive";
+
+// Template
+@import "template";
+@import "template_responsive";
+
+// Modules
+@import './modules/notification';
