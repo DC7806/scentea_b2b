@@ -1,0 +1,39 @@
+/ FIXME: link items
+header.bg-white
+  = render 'frontend/mobile_menu'
+
+  .tt-desktop-header
+    .container
+      .tt-header-holder
+        .tt-col-obj.tt-obj-logo
+          = link_to root_path, class: 'tt-logo tt-logo-alignment'
+            = image_tag 'logo'
+        .tt-col-obj.tt-obj-menu
+          .tt-desctop-parent-menu.tt-parent-box
+            .tt-desctop-menu
+              nav
+                ul
+                  li.dropdown.position-relative
+                    = link_to t('utilities.buttons.all_products'), '#'
+                    .dropdown-menu.p-3.rounded-0
+                      .row.tt-col-list
+                        .col
+                          ul.tt-megamenu-submenu
+                            - 3.times do
+                              li.mb-2
+                                = link_to 'fix_me', '#'
+                  li.dropdown
+                    = link_to t('frontend.navs.blogs'), '#'
+                  li.dropdown
+                    = link_to t('frontend.navs.affiliation'), '#'
+                  li.dropdown
+                    = link_to t('frontend.navs.contact'), '#'
+
+        .tt-col-obj.tt-obj-options.obj-move-right
+          .tt-desctop-parent-account.tt-parent-box
+            .tt-account.tt-dropdown-obj.d-none.d-sm-block
+              = link_to "https://facebook.com/scenteataiwan",
+                         class: 'tt-dropdown-toggle',
+                         target: :_blank,
+                         referrer: 'nofollow noopener'
+                i.icon-g-64
