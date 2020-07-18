@@ -7,9 +7,6 @@ zh-TW:
       admin_user: 後台管理者
       user: 使用者
     attributes:
-      admin_user:
-        password: 密碼
-        password_confirmation: 確認密碼
       account:
         address: 地址
         brand_name: 品牌名稱
@@ -26,10 +23,15 @@ zh-TW:
         created: 建立
         pending: 待審
         active: 啟用
+      admin_user:
+        password: 密碼
+        password_confirmation: 確認密碼
       user:
         email: 信箱
         first_name: 名
         last_name: 姓
+        password: 密碼
+        password_confirmation: 確認密碼
     errors:
       messages:
         blank: 為必填項目
@@ -38,4 +40,6 @@ zh-TW:
         invalid: 無效
       models:
         admin_user:
+          confirmation: 必須與密碼相同
+        user:
           confirmation: 必須與密碼相同

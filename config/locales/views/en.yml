@@ -18,6 +18,12 @@ en:
       edit:
         account_info: Account Info
         user_info: User Info
+  users:
+    registrations:
+      new:
+        title: Create Uesr Account
+        min_characters: "Miminum %{length} characters"
+        registered: Already have an account?
 
   utilities:
     buttons:
@@ -29,5 +35,6 @@ en:
       forget_password: Forget Password?
       log_in: Log In
       log_out: Log Out
+      next_step: Next
     alerts:
       delete_confirmation: Sure to delete the item?
