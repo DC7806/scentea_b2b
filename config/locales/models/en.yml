@@ -1,1 +1,34 @@
 en:
+  activerecord:
+    models:
+      account: Account
+      admin_user: Admin User
+    attributes:
+      admin_user:
+        password: Password
+        password_confirmation: Password Confirmation
+      account:
+        address: Address
+        brand_name: Brand Name
+        contact_email: Contact Email
+        contact_number: Contact Number
+        company_name: Company Name
+        region: Region
+        status: Status
+        tax_id_number: Tax ID Number
+      account/region:
+        domestic: Domestic
+        foreign: Foreign
+      account/status:
+        created: Created
+        pending: Pending
+        active: Active
+    errors:
+      messages:
+        blank: is required
+        not_found: no record found
+        too_short: is too short
+        invalid: is invalid
+      models:
+        admin_user:
+          confirmation: must be same as Password

@@ -1,11 +1,28 @@
 zh-TW:
   activerecord:
     models:
+      account: 帳戶
       admin_user: 後台管理者
     attributes:
       admin_user:
         password: 密碼
         password_confirmation: 確認密碼
+      account:
+        address: 地址
+        brand_name: 品牌名稱
+        contact_email: 聯絡信箱
+        contact_number: 聯絡電話
+        company_name: 公司名稱
+        region: 地區
+        status: 狀態
+        tax_id_number: 統一編號
+      account/region:
+        domestic: 國內
+        foreign: 海外
+      account/status:
+        created: 建立
+        pending: 待審
+        active: 啟用
     errors:
       messages:
         blank: 為必填項目
