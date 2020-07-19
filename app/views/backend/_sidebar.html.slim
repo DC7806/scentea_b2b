@@ -1,11 +1,10 @@
 aside
   #sidebar.nav-collapse
     ul#nav-accordion.sidebar-menu
-      / li
-      /   a[href="#"]
-      /     i.fa.fa-dashboard
-      /     span
-      /       | Page
+      li
+        = link_to admin_accounts_path, class: (sidebar_active_on('account')) do
+          i.fa.fa-users
+          span = "#{t('activerecord.models.account')}/#{t('activerecord.models.user')}"
       / li.sub-menu
       /   a[href="#"]
       /     i.fa.fa-laptop

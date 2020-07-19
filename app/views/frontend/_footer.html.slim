@@ -1,0 +1,53 @@
+/ FIXME: link items
+footer.bg-white
+  .tt-footer-col.tt-color-scheme-01
+    .container
+      .row
+        .col-md-6.col-lg-2
+          .tt-mobile-collapse
+            h4.tt-collapse-title
+              = t('.basic')
+            .tt-collapse-content
+              ul.tt-list
+                li.mb-2
+                  = link_to t('frontend.navs.our_story'), '#'
+                li
+                  = link_to t('frontend.navs.blogs'), '#'
+        .col-md-6.col-lg-2
+          .tt-mobile-collapse
+            h4.tt-collapse-title
+              = t('.products')
+            .tt-collapse-content
+              ul.tt-list
+                - 3.times do
+                  li.mb-2
+                    = link_to 'fix_me', '#'
+        .col-md-6.col-lg-2
+          .tt-mobile-collapse
+            h4.tt-collapse-title
+              = t('.wholesale')
+            .tt-collapse-content
+              ul.tt-list
+                li
+                  = link_to t('frontend.navs.affiliation'), '#'
+        .col-md-6.col-lg-2
+          .tt-mobile-collapse
+            h4.tt-collapse-title
+              = t('.about')
+            .tt-collapse-content
+              ul.tt-list
+                li.mb-2
+                  = link_to t('frontend.navs.contact'), '#'
+                li
+                  = link_to t('frontend.navs.faq'), '#'
+
+  .tt-footer-custom
+    .container
+      .tt-row
+        .tt-col-left
+          .tt-col-item.tt-logo-col
+            = link_to root_path, class: 'tt-logo tt-logo-alignment'
+              = image_tag 'logo'
+          .tt-col-item
+            .tt-box-copyright
+              = "© SCENTEA #{Time.now.year}. All Rights Reserved"

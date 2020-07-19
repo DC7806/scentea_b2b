@@ -1,7 +1,15 @@
 zh-TW:
-  new: 新增
-  edit: 編輯
-  update: 編輯
+  new: "新增 %{resource}"
+  edit: "編輯 %{resource}"
+  index: "%{resource}列表"
+  update: "編輯 %{resource}"
+  account_registrations:
+    new:
+      title: 建立公司帳戶
+    complete:
+      title: Bowen TODO（提示帳戶待審）
+      registration_complete: Bowen TODO
+      back_to_homepage: 返回首頁
   admin_users:
     sessions:
       new:
@@ -12,11 +20,28 @@ zh-TW:
       edit:
         title: 重置密碼
         new_password: 輸入新密碼（6碼以上）
+  admin:
+    accounts:
+      edit:
+        account_info: 帳戶資訊
+        user_info: 使用者資訊
+  users:
+    registrations:
+      new:
+        title: 建立使用者帳戶
+        min_characters: "英數字 %{length} 碼以上"
+        registered: 已經有帳戶了嗎？
 
   utilities:
     buttons:
-      confirm: 確認
+      back: 返回
       cancel: 取消
+      confirm: 確認
+      close: 關閉
+      delete: 刪除
+      forget_password: 忘記密碼？
       log_in: 登入
       log_out: 登出
-      forget_password: 忘記密碼？
+      next_step: 下一步
+    alerts:
+      delete_confirmation: 確認刪除？

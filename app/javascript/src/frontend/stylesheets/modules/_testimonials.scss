@@ -1,0 +1,44 @@
+#testimonials {
+  $sp_height: 260px;
+  $pc_height: 550px;
+
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: $sp_height;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .testimonial {
+    height: $sp_height;
+  }
+
+  .testimonial_content {
+    font-size: inherit;
+    line-height: 1.2;
+  }
+
+  .testimonial_avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: 1025px) {
+    &:before {
+      height: $pc_height;
+    }
+
+    .testimonial {
+      height: $pc_height;
+    }
+
+    .testimonial_avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

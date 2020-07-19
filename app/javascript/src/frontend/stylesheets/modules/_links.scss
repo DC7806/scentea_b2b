@@ -1,0 +1,7 @@
+a {
+  color: $default_color;
+
+  &:hover {
+    color: $default_text_color;
+  }
+}

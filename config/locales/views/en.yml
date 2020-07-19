@@ -1,7 +1,15 @@
 en:
-  new: Create
-  edit: Edit
-  update: Update
+  new: "New %{resource}"
+  edit: "Edit %{resource}"
+  index: "%{resource} List"
+  update: "Edit %{resource}"
+  account_registrations:
+    new:
+      title: Create Company Account
+    complete:
+      title: Bowen TODO（提示帳戶待審）
+      registration_complete: Bowen TODO
+      back_to_homepage: Back To Homepage
   admin_users:
     sessions:
       new:
@@ -12,11 +20,28 @@ en:
       edit:
         title: Reset Password
         new_password: New Password (6 characters minimum)
+  admin:
+    accounts:
+      edit:
+        account_info: Account Info
+        user_info: User Info
+  users:
+    registrations:
+      new:
+        title: Create Uesr Account
+        min_characters: "Miminum %{length} characters"
+        registered: Already have an account?
 
   utilities:
     buttons:
-      confirm: Confirm
+      back: Back
       cancel: Cancel
+      confirm: Confirm
+      close: Close
+      delete: Delete
+      forget_password: Forget Password?
       log_in: Log In
       log_out: Log Out
-      forget_password: Forget Password?
+      next_step: Next
+    alerts:
+      delete_confirmation: Sure to delete the item?
