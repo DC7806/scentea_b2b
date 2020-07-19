@@ -1,7 +1,8 @@
 en:
-  new: Create
-  edit: Edit
-  update: Update
+  new: "New %{resource}"
+  edit: "Edit %{resource}"
+  index: "%{resource} List"
+  update: "Edit %{resource}"
   admin_users:
     sessions:
       new:
@@ -12,11 +13,21 @@ en:
       edit:
         title: Reset Password
         new_password: New Password (6 characters minimum)
+  admin:
+    accounts:
+      edit:
+        account_info: Account Info
+        user_info: User Info
 
   utilities:
     buttons:
-      confirm: Confirm
+      back: Back
       cancel: Cancel
+      confirm: Confirm
+      close: Close
+      delete: Delete
+      forget_password: Forget Password?
       log_in: Log In
       log_out: Log Out
-      forget_password: Forget Password?
+    alerts:
+      delete_confirmation: Sure to delete the item?

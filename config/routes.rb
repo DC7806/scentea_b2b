@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :admin_users,
              controllers: {
                sessions: 'admin_users/sessions',
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
     root to: 'pages#index'
 
     resource :admin_users, only: %i[edit update], as: :user
+
+    resources :accounts, only: %i[index edit update]
   end
 end

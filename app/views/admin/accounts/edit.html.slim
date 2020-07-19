@@ -1,0 +1,32 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = t(action_name, resource: t('activerecord.models.account'))
+    .card-body
+      = simple_form_for [:admin, @account], wrapper: :horizontal_form do |f|
+        = f.input :status, as: :select, required: true,
+                           collection: Account.statuses.keys.last(2).map { |k| [t("activerecord.attributes.account/status.#{k}"), k]}
+
+        p.mt-3.bold
+          = t('.account_info')
+        = f.input :region, disabled: true,
+                           as: :string,
+                           input_html: { value: t("activerecord.attributes.account/region.#{@account.region}") }
+        = f.input :company_name, disabled: true
+        = f.input :contact_email, disabled: true
+        = f.input :contact_number, disabled: true
+        = f.input :address, disabled: true
+        - if @account.domestic?
+          = f.input :tax_id_number, disabled: true
+
+        p.mt-3.bold
+          = t('.user_info')
+        = f.simple_fields_for @account.user, wrapper: :horizontal_form do |ff|
+          = ff.input :last_name, disabled: true
+          = ff.input :first_name, disabled: true
+          = ff.input :email, disabled: true
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        .form-group
+          = go_back_button

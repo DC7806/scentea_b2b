@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   var notification = document.getElementById('notification')
 
-  if (notification.length < 1) { return }
+  if (!notification) { return }
 
   notification.style.transition= 'opacity 2.5s ease-in-out'
   notification.style.opacity = '0'
