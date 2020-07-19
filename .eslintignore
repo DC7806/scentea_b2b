@@ -1,1 +1,3 @@
 app/javascript/src/backend/javascripts/lib/*.js
+app/javascript/src/frontend/javascripts/lib/*.js
+app/javascript/src/frontend/javascripts/template.js

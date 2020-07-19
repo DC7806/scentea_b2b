@@ -1,0 +1,32 @@
+/ FIXME: link items
+nav.panel-menu.mobile-main-menu
+  ul
+    li
+      = link_to t('utilities.buttons.all_products'), '#'
+    li
+      = link_to t('frontend.navs.blogs'), '#'
+    li
+      = link_to t('frontend.navs.affiliation'), '#'
+    li
+      = link_to t('frontend.navs.know_more'), '#'
+
+  .mm-navbtn-names
+    .mm-closebtn
+      = t('utilities.buttons.close')
+    .mm-backbtn
+      = t('utilities.buttons.back')
+.tt-mobile-header
+  .container-fluid
+    .tt-header-row
+      .tt-mobile-parent-menu
+        .tt-menu-toggle
+          i.icon-03
+      = link_to root_path, class: 'tt-logo tt-logo-alignment'
+        = image_tag 'logo'
+      .tt-mobile-parent-account.tt-parent-box
+        .tt-account.tt-dropdown-obj.d-block.d-sm-none
+          = link_to "https://facebook.com/scenteataiwan",
+                    class: 'tt-dropdown-toggle',
+                    target: :_blank,
+                    referrer: 'nofollow noonpener'
+            i.icon-g-64

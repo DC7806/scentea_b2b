@@ -3,6 +3,6 @@ import 'regenerator-runtime/runtime'
 require('@rails/ujs').start()
 
 import 'jquery'
-import '../src/backend/javascripts/'
+import '../src/frontend/javascripts/'
 
-import '../src/backend/stylesheets/index.scss'
+import '../src/frontend/stylesheets/index.scss'

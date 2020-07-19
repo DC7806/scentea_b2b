@@ -3,6 +3,13 @@ en:
   edit: "Edit %{resource}"
   index: "%{resource} List"
   update: "Edit %{resource}"
+  account_registrations:
+    new:
+      title: Create Company Account
+    complete:
+      title: Bowen TODO（提示帳戶待審）
+      registration_complete: Bowen TODO
+      back_to_homepage: Back To Homepage
   admin_users:
     sessions:
       new:
@@ -18,6 +25,12 @@ en:
       edit:
         account_info: Account Info
         user_info: User Info
+  users:
+    registrations:
+      new:
+        title: Create Uesr Account
+        min_characters: "Miminum %{length} characters"
+        registered: Already have an account?
 
   utilities:
     buttons:
@@ -29,5 +42,6 @@ en:
       forget_password: Forget Password?
       log_in: Log In
       log_out: Log Out
+      next_step: Next
     alerts:
       delete_confirmation: Sure to delete the item?

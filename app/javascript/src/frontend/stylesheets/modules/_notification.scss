@@ -1,0 +1,18 @@
+#notification {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 999999;
+
+  &.success {
+    background-color: rgba(0, 255, 0, 0.8);
+  }
+
+  &.fail {
+    background-color: rgba(255, 241, 84, 0.9);
+  }
+}
