@@ -4,17 +4,14 @@ module Users
   class RegistrationsController < Devise::RegistrationsController
     layout 'registrations'
 
-    def new
-      super
-    end
-
     def create
       user = User.new(user_params)
       assign_account(user)
 
       if user.valid?
         user.save!
-        redirect_to root_path
+        sign_in user
+        redirect_to new_account_registration_path
       else
         @user = user
         render :new
@@ -35,14 +32,7 @@ module Users
       end
 
       def assign_account(user)
-        account = Account.new(
-          contact_email: user.email,
-          company_name: '',
-          tax_id_number: '',
-          region: 'domestic'
-        )
-
-        user.account = account
+        user.account = Account.new(contact_email: user.email)
       end
   end
 end

@@ -3,6 +3,13 @@ en:
   edit: "Edit %{resource}"
   index: "%{resource} List"
   update: "Edit %{resource}"
+  account_registrations:
+    new:
+      title: Create Company Account
+    complete:
+      title: Bowen TODO（提示帳戶待審）
+      registration_complete: Bowen TODO
+      back_to_homepage: Back To Homepage
   admin_users:
     sessions:
       new:

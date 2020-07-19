@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
+  resources :account_registrations, only: %i[new create] do
+    collection { get :complete }
+  end
+
   namespace :admin, path: ENV['ADMIN_PATH'] do
     root to: 'pages#index'
 
