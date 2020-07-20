@@ -31,6 +31,14 @@ zh-TW:
         title: 建立使用者帳戶
         min_characters: "英數字 %{length} 碼以上"
         registered: 已經有帳戶了嗎？
+    sessions:
+      new:
+        title: 登入
+    shared:
+      links:
+        forget_password: 忘記密碼？
+        sign_in: 登入
+        sign_up: 建立帳戶
 
   utilities:
     buttons:

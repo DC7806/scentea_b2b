@@ -32,6 +32,7 @@ zh-TW:
         last_name: 姓
         password: 密碼
         password_confirmation: 確認密碼
+        remember_me: 記住密碼
     errors:
       messages:
         blank: 為必填項目

@@ -31,6 +31,14 @@ en:
         title: Create Uesr Account
         min_characters: "Miminum %{length} characters"
         registered: Already have an account?
+    sessions:
+      new:
+        title: Log In
+    shared:
+      links:
+        forget_password: Forget Password?
+        sign_in: Sign In
+        sign_up: Sign Up
 
   utilities:
     buttons:
