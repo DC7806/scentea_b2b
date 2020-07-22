@@ -14,7 +14,7 @@ header.bg-white
               nav
                 ul
                   li.dropdown.position-relative
-                    = link_to t('utilities.buttons.all_products'), '#'
+                    = link_to t('.links.all_products'), '#'
                     .dropdown-menu.p-3.rounded-0
                       .row.tt-col-list
                         .col
@@ -23,11 +23,27 @@ header.bg-white
                               li.mb-2
                                 = link_to 'fix_me', '#'
                   li.dropdown
-                    = link_to t('frontend.navs.blogs'), '#'
+                    = link_to t('.links.blogs'), '#'
                   li.dropdown
-                    = link_to t('frontend.navs.affiliation'), '#'
+                    = link_to t('.links.affiliation'), '#'
                   li.dropdown
-                    = link_to t('frontend.navs.contact'), '#'
+                    = link_to t('.links.contact'), '#'
+                  - if current_user
+                    li.dropdown.position-relative
+                      = link_to t('.links.account_info'), '#'
+                      .dropdown-menu.p-3.rounded-0
+                        .row.tt-col-list
+                          .col
+                            ul.tt-megamenu-submenu
+                                li.mb-2
+                                  = link_to t('.links.edit_user'), edit_user_registration_path
+                                li.mb-2
+                                  = link_to t('.links.edit_account'), '#'
+                                li.mb-2
+                                  = link_to t('utilities.buttons.log_out'), destroy_user_session_path, method: :delete
+                  - else
+                    li.dropdown
+                      = link_to t('utilities.buttons.log_in'), new_user_session_path
 
         .tt-col-obj.tt-obj-options.obj-move-right
           .tt-desctop-parent-account.tt-parent-box
