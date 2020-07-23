@@ -34,6 +34,7 @@ en:
         password: Password
         password_confirmation: Password Confirmation
         remember_me: Remember Me
+        reset_password_token: Reset Password Token
     errors:
       messages:
         blank: is required
@@ -41,6 +42,8 @@ en:
         too_short: is too short
         invalid: is invalid
       models:
+        account:
+          taken: is registered
         admin_user:
           confirmation: must be same as Password
         user:

@@ -5,7 +5,6 @@ h2 = t('.title')
                             html: { method: :put } do |f|
   = f.error_notification
   = f.input :reset_password_token, as: :hidden
-  = f.full_error :reset_password_token
   = f.input :password,
             required: true,
             autofocus: true,
