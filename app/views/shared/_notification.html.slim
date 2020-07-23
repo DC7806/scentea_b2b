@@ -1,0 +1,3 @@
+#notification [ class = (flash[:notice].present? ? 'success' : 'fail')
+                data-controller = 'notification' ]
+  = flash[:notice].present? ? flash[:notice] : flash[:alert]
