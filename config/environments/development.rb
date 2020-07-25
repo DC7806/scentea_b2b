@@ -30,6 +30,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.active_job.queue_adapter = :sidekiq
+
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
