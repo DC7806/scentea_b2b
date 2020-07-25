@@ -1,0 +1,12 @@
+h2.mb-4 = t('.title')
+
+= simple_form_for @account do |f|
+  = f.input :company_name
+  = f.input :region, as: :select, collection: @region_options
+  = f.input :contact_email
+  = f.input :brand_name
+  = f.input :contact_number
+  = f.input :address
+  = f.input :tax_id_number
+
+  = f.button :submit, t('utilities.buttons.confirm'), class: 'float-right'

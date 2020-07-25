@@ -17,7 +17,7 @@ en:
         status: Status
         tax_id_number: Tax ID Number
       account/region:
-        domestic: Domestic
+        domestic: Taiwan
         foreign: Foreign
       account/status:
         created: Created

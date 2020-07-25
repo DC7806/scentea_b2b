@@ -17,7 +17,7 @@ zh-TW:
         status: 狀態
         tax_id_number: 統一編號
       account/region:
-        domestic: 國內
+        domestic: 台灣
         foreign: 海外
       account/status:
         created: 建立

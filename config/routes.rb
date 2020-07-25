@@ -16,8 +16,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
-  resources :account_registrations, only: %i[new create] do
-    collection { get :complete }
+  resource :account, only: %i[edit update] do
+    scope module: :accounts do
+      resource :registrations, as: :registration, only: %i[new create] do
+        collection { get :complete }
+      end
+    end
   end
 
   namespace :admin, path: ENV['ADMIN_PATH'] do

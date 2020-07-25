@@ -3,13 +3,16 @@ zh-TW:
   edit: "編輯 %{resource}"
   index: "%{resource}列表"
   update: "編輯 %{resource}"
-  account_registrations:
-    new:
-      title: 建立公司帳戶
-    complete:
-      title: Bowen TODO（提示帳戶待審）
-      registration_complete: Bowen TODO
-      back_to_homepage: 返回首頁
+  accounts:
+    registrations:
+      new:
+        title: 建立公司帳戶
+      complete:
+        title: Bowen TODO（提示帳戶待審）
+        registration_complete: Bowen TODO
+        back_to_homepage: 返回首頁
+    edit:
+      title: 編輯公司帳戶
   admin_users:
     sessions:
       new:
