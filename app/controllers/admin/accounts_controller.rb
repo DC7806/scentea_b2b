@@ -11,7 +11,13 @@ module Admin
     def edit; end
 
     def update
-      return redirect_to_index if @account.update(account_params)
+      @account.assign_attributes(account_params)
+
+      if @account.valid?
+        send_activation_email(@account)
+        @account.save
+        return redirect_to_index
+      end
 
       flash_and_render(:edit)
     end
@@ -29,6 +35,12 @@ module Admin
       def account_params
         params.require(:account)
               .permit(:status)
+      end
+
+      def send_activation_email(account)
+        return unless account.status_changed? && account.active?
+
+        ActivateAccountNotificationWorker.perform_async
       end
   end
 end

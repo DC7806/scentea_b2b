@@ -2,7 +2,6 @@
 
 module Accounts
   class RegistrationsController < AccountsController
-    before_action :find_account, only: %i[new create]
     before_action :redirect_pending_account, only: %i[new create]
     before_action :redirect_active_account
     before_action :region_options, only: %i[new create]
@@ -12,13 +11,16 @@ module Accounts
     def create
       if @account.update(account_params)
         @account.pending!
+        NewAccountNotificationWorker.perform_async(@account.id)
         redirect_to complete_account_registration_path
       else
         render :new
       end
     end
 
-    def complete; end
+    def complete
+      redirect_to new_account_registration_path if @account.created?
+    end
 
     private
 
