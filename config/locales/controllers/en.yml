@@ -1,0 +1,6 @@
+en:
+  controller:
+    actions:
+      create_success: "%{resource} Created"
+      update_success: "%{resource} Updated"
+      fail: Record Not Saved

@@ -32,8 +32,13 @@ class Account < ApplicationRecord
   validates :company_name,  presence: true, on: :update
   validates :region,        presence: true
   validates :status,        presence: true
-  validates :company_name,  uniqueness: { case_sensitive: false },
-                            allow_blank: true
-  validates :tax_id_number, uniqueness: { case_sensitive: false }
   validates :contact_email, format: { with: Devise.email_regexp }
+  validates :company_name,  uniqueness: {
+    allow_blank: true,
+    case_sensitive: false
+  }
+  validates :tax_id_number, uniqueness: {
+    allow_blank: true,
+    case_sensitive: false
+  }
 end

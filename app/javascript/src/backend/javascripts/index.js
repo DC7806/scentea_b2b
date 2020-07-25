@@ -6,6 +6,3 @@ import './lib/jquery.nicescroll'
 
 // Template
 import './template'
-
-// Modules
-import './modules/notification'

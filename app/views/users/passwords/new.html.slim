@@ -1,0 +1,15 @@
+h2 = t('.title')
+
+= simple_form_for resource, as: resource_name,
+                            url: password_path(resource_name),
+                            html: { method: :post } do |f|
+  = f.error_notification
+  = f.input :email,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: 'email' }
+
+  = f.button :submit, t('.submit')
+
+.mt-3
+= render 'users/shared/links'

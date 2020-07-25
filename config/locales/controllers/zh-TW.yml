@@ -1,8 +1,6 @@
 zh-TW:
-  actions:
-    create: 新增
-    update: 更新
-
-  notices:
-    success: 成功
-    fail: 失敗
+  controller:
+    actions:
+      create_success: "%{resource}新增成功"
+      update_success: "%{resource}已更新"
+      fail: 請檢視錯誤

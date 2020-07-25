@@ -11,5 +11,7 @@ html
 
   body class="min-vh-100 d-flex flex-column justify-content-between #{yield :body_class_name}"
     = render 'frontend/header'
+    - if flash[:notice] || flash[:alert]
+      = render 'shared/notification'
     = yield
     = render 'frontend/footer'

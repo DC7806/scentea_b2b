@@ -17,7 +17,7 @@ zh-TW:
         status: 狀態
         tax_id_number: 統一編號
       account/region:
-        domestic: 國內
+        domestic: 台灣
         foreign: 海外
       account/status:
         created: 建立
@@ -27,11 +27,14 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       user:
+        current_password: 目前密碼
         email: 信箱
         first_name: 名
         last_name: 姓
         password: 密碼
         password_confirmation: 確認密碼
+        remember_me: 記住密碼
+        reset_password_token: 重置密碼金鑰
     errors:
       messages:
         blank: 為必填項目
@@ -39,6 +42,8 @@ zh-TW:
         too_short: 太短
         invalid: 無效
       models:
+        account:
+          taken: 已被其他用戶註冊
         admin_user:
           confirmation: 必須與密碼相同
         user:
