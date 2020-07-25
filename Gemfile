@@ -20,6 +20,7 @@ gem 'slim', '~> 4.0.1'
 gem 'strong_migrations'
 
 gem 'devise', '~> 4.7.1'
+gem 'mailgun-ruby', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
