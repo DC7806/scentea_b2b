@@ -17,7 +17,7 @@ en:
         status: Status
         tax_id_number: Tax ID Number
       account/region:
-        domestic: Domestic
+        domestic: Taiwan
         foreign: Foreign
       account/status:
         created: Created
@@ -27,11 +27,14 @@ en:
         password: Password
         password_confirmation: Password Confirmation
       user:
+        current_password: Current Password
         email: Email
         first_name: First Name
         last_name: Last Name
         password: Password
         password_confirmation: Password Confirmation
+        remember_me: Remember Me
+        reset_password_token: Reset Password Token
     errors:
       messages:
         blank: is required
@@ -39,6 +42,8 @@ en:
         too_short: is too short
         invalid: is invalid
       models:
+        account:
+          taken: is registered
         admin_user:
           confirmation: must be same as Password
         user:

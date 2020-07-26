@@ -3,15 +3,15 @@ html
   head
     title
       | SCENTEA B2B
-    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name='viewport' content='width=device-width, initial-scale=1'
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all'
-    = javascript_pack_tag 'application'
-  body.bg-dark
-    = render 'admin_users/shared/notification', message: flash[:alert] if flash[:alert]
-    = render 'admin_users/shared/notification', message: flash[:notice] if flash[:notice]
+    = stylesheet_pack_tag 'backend', media: 'all'
+    = javascript_pack_tag 'backend', defer: true
+
+  body.bg-dark.min-vh-100.d-flex.flex-column.justify-content-center
+    - if flash[:notice] || flash[:alert]
+      = render 'shared/notification'
     .container
-      .vh-100.d-flex.flex-column.justify-content-around
-        .d-flex.justify-content-around
-          = yield
+      .d-flex.justify-content-around
+        = yield

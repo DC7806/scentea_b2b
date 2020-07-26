@@ -1,0 +1,22 @@
+h2 = t('.title')
+
+= simple_form_for resource, as: resource_name,
+                            url: password_path(resource_name),
+                            html: { method: :put } do |f|
+  = f.error_notification
+  = f.input :reset_password_token, as: :hidden
+  = f.input :password,
+            required: true,
+            autofocus: true,
+            hint: '',
+            placeholder: (t('simple_form.hints.defaults.min_characters', length: @minimum_password_length) if @minimum_password_length),
+            input_html: { autocomplete: 'new-password' }
+  = f.input :password_confirmation,
+            required: true,
+            hint: '',
+            input_html: { autocomplete: 'new-password' }
+
+  = f.button :submit, t('utilities.buttons.confirm')
+
+.mt-3
+  = render 'users/shared/links'

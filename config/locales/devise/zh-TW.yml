@@ -1,29 +1,37 @@
 zh-TW:
   devise:
     failure:
-      admin_user:
-        already_authenticated: "已經登入"
-        invalid: "%{authentication_keys}或密碼無效"
-        not_found_in_database: "%{authentication_keys}或密碼無效"
-        unauthenticated: "必須先登入或註冊後才能繼續"
+      already_authenticated: 已經登入
+      invalid: "%{authentication_keys}或密碼無效"
+      not_found_in_database: "%{authentication_keys}或密碼無效"
+      unauthenticated: 請登入或註冊帳戶
     mailer:
-      admin_user:
-        reset_password_instructions:
-          subject: "密碼重設步驟"
+      reset_password_instructions:
+        subject: 重置密碼（Bowen TODO：翻譯信件內容）
+        body:
+          sentence_1: Someone has requested a link to change your password. You can do this through the link below. If you didn't request this, please ignore this email.
+          sentence_2: Your password won't change until you access the link above and create a new one.
+      email_changed:
+        subject: 帳戶信箱已更新（Bowen TODO：翻譯信件內容）
+        body:
+          sentence_1: We're contacting you to notify you that your email has been changed to
+      password_change:
+        subject: 帳戶密碼已更新（Bowen TODO：翻譯信件內容）
+        body:
+          sentence_1: We're contacting you to notify you that your password has been changed.
     passwords:
-      admin_user:
-        no_token: "這是密碼重設頁面，僅能透過密碼重設信件進入。如透過重設信件進入，請確認網址完整"
-        send_instructions: "重新設定密碼步驟說明已發送至信箱"
-        send_paranoid_instructions: "重新設定密碼步驟說明已發送至信箱！"
-        updated: "密碼已更新，已登入"
-        updated_not_active: "密碼已修改"
+      no_token: 這是密碼重設頁面，僅能透過密碼重設信件進入。如透過重設信件進入，請確認網址完整
+      send_instructions: 重新設定密碼步驟說明已發送至註冊信箱
+      send_paranoid_instructions: 重新設定密碼步驟說明已發送至註冊信箱！
+      updated: 密碼已更新
+      updated_not_active: 密碼已修改
+    registrations:
+      updated: 更新成功
     sessions:
-      admin_user:
-        signed_in: "成功登入"
-        signed_out: "成功登出"
-        already_signed_out: "成功登出"
+      signed_in: 登入成功
+      signed_out: 登出成功
+      already_signed_out: 帳戶已登出
   errors:
     messages:
-      admin_user:
-        expired: "已經過期，請重新申請"
-        not_found: "找不到"
+        expired: 已經過期，請重新申請
+        not_found: 找不到

@@ -3,13 +3,16 @@ zh-TW:
   edit: "編輯 %{resource}"
   index: "%{resource}列表"
   update: "編輯 %{resource}"
-  account_registrations:
-    new:
-      title: 建立公司帳戶
-    complete:
-      title: Bowen TODO（提示帳戶待審）
-      registration_complete: Bowen TODO
-      back_to_homepage: 返回首頁
+  accounts:
+    registrations:
+      new:
+        title: 建立公司帳戶
+      complete:
+        title: Bowen TODO（提示帳戶待審）
+        registration_complete: Bowen TODO
+        back_to_homepage: 返回首頁
+    edit:
+      title: 編輯公司帳戶
   admin_users:
     sessions:
       new:
@@ -25,12 +28,33 @@ zh-TW:
       edit:
         account_info: 帳戶資訊
         user_info: 使用者資訊
+  frontend:
+    header:
+      links:
+        account_info: 帳戶管理
+        edit_user: 編輯使用者帳戶
+        edit_account: 編輯公司帳戶
   users:
     registrations:
       new:
         title: 建立使用者帳戶
-        min_characters: "英數字 %{length} 碼以上"
         registered: 已經有帳戶了嗎？
+      edit:
+        title: 編輯使用者帳戶
+    sessions:
+      new:
+        title: 登入
+    shared:
+      links:
+        forget_password: 忘記密碼？
+        sign_in: 登入
+        sign_up: 建立帳戶
+    passwords:
+      new:
+        title: 忘記密碼？
+        submit: 重置密碼
+      edit:
+        title: 更改密碼
 
   utilities:
     buttons:
