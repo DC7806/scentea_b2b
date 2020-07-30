@@ -5,6 +5,7 @@ en:
     models:
       account: Account
       admin_user: Admin User
+      faq_category: FAQ Category
       user: User
     attributes:
       account:
@@ -26,6 +27,12 @@ en:
       admin_user:
         password: Password
         password_confirmation: Password Confirmation
+      faq_category:
+        name: Name
+        region: Region
+      faq_category/region:
+        domestic: Taiwan
+        foreign: Foreign
       user:
         current_password: Current Password
         email: Email

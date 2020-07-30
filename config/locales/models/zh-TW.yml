@@ -5,6 +5,7 @@ zh-TW:
     models:
       account: 帳戶
       admin_user: 後台管理者
+      faq_category: FAQ 分類
       user: 使用者
     attributes:
       account:
@@ -26,6 +27,12 @@ zh-TW:
       admin_user:
         password: 密碼
         password_confirmation: 確認密碼
+      faq_category:
+        name: 名稱
+        region: 地區
+      faq_category/region:
+        domestic: 台灣
+        foreign: 海外
       user:
         current_password: 目前密碼
         email: 信箱
