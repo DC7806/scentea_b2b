@@ -19,6 +19,9 @@
 #
 
 class Category < ApplicationRecord
+  extend Mobility
+  translates :name, type: :string
+
   enum region: { domestic: 0, foreign: 1 }
 
   validates :name,     presence: true
