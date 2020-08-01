@@ -32,7 +32,9 @@ Rails.application.routes.draw do
 
     resources :regions, path: '', only: [] do
       resources :accounts, only: %i[index edit update]
-      resources :faq_categories, except: :show
+      resources :faq_categories, except: :show do
+        collection { patch :sort }
+      end
     end
   end
 end

@@ -2,6 +2,8 @@
 
 module Admin
   class FaqCategoriesController < AdminController
+    include Admin::Sortable
+
     before_action :find_faq_category, only: %i[edit update destroy]
 
     def index
