@@ -27,11 +27,15 @@ class AdminController < ApplicationController
       flash.now[:alert] = t('controller.actions.fail')
     end
 
+    def available_regions
+      %w[domestic foreign]
+    end
+
     def current_region
       params[:region_id]
     end
 
-    def available_regions
-      %w[domestic foreign]
+    def current_sort_path
+      raise NotImplementedError
     end
 end

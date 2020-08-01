@@ -43,6 +43,10 @@ module Admin
         @current_scope ||= FaqCategory
       end
 
+      def current_sort_path
+        sort_admin_region_faq_categories_path
+      end
+
       def faq_category_params
         params.require(:faq_category)
               .permit(
