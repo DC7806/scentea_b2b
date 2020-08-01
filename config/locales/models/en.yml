@@ -29,7 +29,6 @@ en:
         password_confirmation: Password Confirmation
       faq_category:
         name: Name
-        region: Region
       faq_category/region:
         domestic: Taiwan
         foreign: Foreign

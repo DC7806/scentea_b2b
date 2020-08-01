@@ -8,6 +8,9 @@ zh-TW:
     error_notification:
       default_message: 請檢視下方錯誤訊息：
     labels:
+      faq_category:
+        name_en: 名稱 - 英文
+        name_zh_tw: 名稱 - 中文
       user:
         edit:
           email: 信箱

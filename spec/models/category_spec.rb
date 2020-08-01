@@ -22,7 +22,8 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   describe 'validations' do
-    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:name_en) }
+    it { should validate_presence_of(:name_zh_tw) }
     it { should validate_presence_of(:position) }
     it { should validate_presence_of(:region) }
     it { should validate_presence_of(:type) }

@@ -8,6 +8,9 @@ en:
     error_notification:
       default_message: 'Please review the problems below:'
     labels:
+      faq_category:
+          name_en: Name - EN
+          name_zh_tw: Name - ZH
       user:
         edit:
           email: Email

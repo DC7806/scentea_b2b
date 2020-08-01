@@ -1,0 +1,14 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('faq_category')
+    .card-body
+      = simple_form_for category, url: url, wrapper: :horizontal_form do |f|
+        = f.input :region, value: current_region, as: :hidden
+        = f.input :name_zh_tw
+        = f.input :name_en
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        .form-group
+          = go_back_button

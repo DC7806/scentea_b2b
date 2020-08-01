@@ -24,8 +24,9 @@ class Category < ApplicationRecord
 
   enum region: { domestic: 0, foreign: 1 }
 
-  validates :name,     presence: true
-  validates :position, presence: true
-  validates :region,   presence: true
-  validates :type,     presence: true
+  validates :name_en,    presence: true
+  validates :name_zh_tw, presence: true
+  validates :position,   presence: true
+  validates :region,     presence: true
+  validates :type,       presence: true
 end

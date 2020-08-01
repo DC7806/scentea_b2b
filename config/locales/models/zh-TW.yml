@@ -29,7 +29,6 @@ zh-TW:
         password_confirmation: 確認密碼
       faq_category:
         name: 名稱
-        region: 地區
       faq_category/region:
         domestic: 台灣
         foreign: 海外

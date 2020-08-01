@@ -1,8 +1,4 @@
 en:
-  new: "New %{resource}"
-  edit: "Edit %{resource}"
-  index: "%{resource} List"
-  update: "Edit %{resource}"
   accounts:
     registrations:
       new:
@@ -28,6 +24,15 @@ en:
       edit:
         account_info: Account Info
         user_info: User Info
+  backend:
+    available_regions:
+      domestic: Taiwan
+      foreign: Foerign
+    create: "Create %{resource}"
+    edit: "Edit %{resource}"
+    index: "%{resource} List"
+    new: "New %{resource}"
+    update: "Edit %{resource}"
   frontend:
     header:
       links:

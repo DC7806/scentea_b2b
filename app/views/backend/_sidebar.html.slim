@@ -5,15 +5,11 @@ aside
         = link_to admin_accounts_path, class: (sidebar_active_on('account')) do
           i.fa.fa-users
           span = "#{t('activerecord.models.account')}/#{t('activerecord.models.user')}"
-      / li.sub-menu
-      /   a[href="#"]
-      /     i.fa.fa-laptop
-      /     span
-      /       | Page
-      /   ul.sub
-      /     li
-      /       a[href="#"]
-      /         | Sub page
-      /     li
-      /       a[href="#"]
-      /         | Sub page
+      li.sub-menu
+        a[href="#"]
+          i.fa.fa-question-circle
+          span = t('activerecord.models.faq_category')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("activerecord.attributes.faq_category/region.#{region}"), admin_region_faq_categories_path(region_id: region)
