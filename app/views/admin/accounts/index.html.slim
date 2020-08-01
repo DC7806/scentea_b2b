@@ -1,7 +1,7 @@
 .d-flex.justify-content-around
   section.card.col-12.pb-3
     header.card-header.mb-3
-      = t('index', resource: t('activerecord.models.account'))
+      = page_header('account')
     .d-flex.px-2.pb-2.mt-3.justify-content-between.font-weight-bold
       .col-1.text-center = t('activerecord.attributes.account.status')
       .col-3 = t('activerecord.attributes.account.company_name')
