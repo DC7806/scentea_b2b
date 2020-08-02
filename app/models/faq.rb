@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Layout/LineLength
 # == Schema Information
 #
 # Table name: faqs
@@ -24,6 +25,7 @@
 #
 #  fk_rails_...  (category_id => categories.id)
 #
+# rubocop:enable Layout/LineLength
 
 class Faq < ApplicationRecord
   extend Mobility

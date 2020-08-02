@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Layout/LineLength
 # == Schema Information
 #
 # Table name: categories
@@ -14,14 +15,25 @@
 #
 # Indexes
 #
-#  index_categories_on_position  (position)
-#  index_categories_on_region    (region)
+#  index_categories_on_position                  (position)
+#  index_categories_on_region                    (region)
+#  index_categories_on_type_and_region_and_name  (type,region,name) UNIQUE WHERE ((name)::text <> ''::text)
 #
+# rubocop:enable Layout/LineLength
 
 require 'rails_helper'
 
 RSpec.describe FaqCategory, type: :model do
   describe 'associations' do
     it { should have_many(:faqs).dependent(:restrict_with_exception) }
+  end
+
+  describe 'validations' do
+    subject { create(:faq_category) }
+
+    it do
+      should validate_uniqueness_of(:name).scoped_to(%i[type region])
+                                          .case_insensitive
+    end
   end
 end
