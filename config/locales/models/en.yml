@@ -28,6 +28,10 @@ en:
       admin_user:
         password: Password
         password_confirmation: Password Confirmation
+      category:
+        name: Name
+        name_en: Name - EN
+        name_zh_tw: Name - ZH
       faq:
         category_id: Category
         description: Description
@@ -36,8 +40,6 @@ en:
         title: Title
         title_en: Title - EN
         title_zh_tw: Title - ZH
-      faq_category:
-        name: Name
       user:
         current_password: Current Password
         email: Email

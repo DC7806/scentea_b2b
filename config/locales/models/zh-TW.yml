@@ -28,6 +28,10 @@ zh-TW:
       admin_user:
         password: 密碼
         password_confirmation: 確認密碼
+      category:
+        name: 名稱
+        name_en: 名稱 - 英文
+        name_zh_tw: 名稱 - 中文
       faq:
         category_id: 分類
         description: 敘述
@@ -36,8 +40,6 @@ zh-TW:
         title: 標題
         title_en: 標題 - 英文
         title_zh_tw: 標題 - 中文
-      faq_category:
-        name: 名稱
       user:
         current_password: 目前密碼
         email: 信箱
