@@ -1,19 +1,21 @@
 aside
   #sidebar.nav-collapse
     ul#nav-accordion.sidebar-menu
-      li
-        = link_to admin_accounts_path, class: (sidebar_active_on('account')) do
+      li.sub-menu
+        a[href="#"]
           i.fa.fa-users
-          span = "#{t('activerecord.models.account')}/#{t('activerecord.models.user')}"
-      / li.sub-menu
-      /   a[href="#"]
-      /     i.fa.fa-laptop
-      /     span
-      /       | Page
-      /   ul.sub
-      /     li
-      /       a[href="#"]
-      /         | Sub page
-      /     li
-      /       a[href="#"]
-      /         | Sub page
+          span = t('activerecord.models.account')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("backend.available_regions.#{region}"),
+                        admin_region_accounts_path(region_id: region)
+      li.sub-menu
+        a[href="#"]
+          i.fa.fa-question-circle
+          span = t('activerecord.models.faq_category')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("backend.available_regions.#{region}"),
+                        admin_region_faq_categories_path(region_id: region)
