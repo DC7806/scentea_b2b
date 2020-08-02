@@ -22,6 +22,8 @@ class Category < ApplicationRecord
   extend Mobility
   translates :name, type: :string
 
+  acts_as_list scope: %i[type region]
+
   enum region: { domestic: 0, foreign: 1 }
 
   validates :name_en,    presence: true

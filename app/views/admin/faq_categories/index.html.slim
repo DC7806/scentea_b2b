@@ -1,17 +1,17 @@
 .d-flex.justify-content-around
   section.card.col-12.pb-3
-    header.card-header.mb-3
+    header.card-header.border-0
       = page_header('faq_category')
       .m-3.text-right
         = link_to new_admin_region_faq_category_path, class: 'text-success'
           i.fa.fa-plus.fa-2x
-    .d-flex.px-2.pb-2.font-weight-bold
+    .d-flex.px-2.font-weight-bold
       .col-1
       .col-9 = t('activerecord.attributes.faq_category.name')
       .col-2
-    ul.list-group
+    ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
       - @categories.each do |category|
-        li.list-group-item.px-2.d-flex.justify-content-between
+        li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = category.id
           i.col-1.fa.fa-bars.align-self-center.text-center
           span.col-9.align-self-center
             = category.name

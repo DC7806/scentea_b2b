@@ -2,6 +2,8 @@
 
 module Admin
   class FaqCategoriesController < AdminController
+    include Admin::Sortable
+
     before_action :find_faq_category, only: %i[edit update destroy]
 
     def index
@@ -41,6 +43,10 @@ module Admin
 
       def current_scope
         @current_scope ||= FaqCategory
+      end
+
+      def current_sort_path
+        sort_admin_region_faq_categories_path
       end
 
       def faq_category_params
