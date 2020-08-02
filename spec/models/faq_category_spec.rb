@@ -18,10 +18,10 @@
 #  index_categories_on_region    (region)
 #
 
-class FaqCategory < Category
-  has_many :faqs, -> { order(:position) },
-           class_name: 'Faq',
-           inverse_of: :category,
-           foreign_key: 'category_id',
-           dependent: :restrict_with_exception
+require 'rails_helper'
+
+RSpec.describe FaqCategory, type: :model do
+  describe 'associations' do
+    it { should have_many(:faqs).dependent(:restrict_with_exception) }
+  end
 end
