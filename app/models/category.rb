@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Layout/LineLength
 # == Schema Information
 #
 # Table name: categories
@@ -14,9 +15,11 @@
 #
 # Indexes
 #
-#  index_categories_on_position  (position)
-#  index_categories_on_region    (region)
+#  index_categories_on_position                  (position)
+#  index_categories_on_region                    (region)
+#  index_categories_on_type_and_region_and_name  (type,region,name) UNIQUE WHERE ((name)::text <> ''::text)
 #
+# rubocop:enable Layout/LineLength
 
 class Category < ApplicationRecord
   extend Mobility
@@ -31,4 +34,5 @@ class Category < ApplicationRecord
   validates :position,   presence: true
   validates :region,     presence: true
   validates :type,       presence: true
+  validates :name, uniqueness: { scope: %i[type region], case_sensitive: false }
 end

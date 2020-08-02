@@ -18,13 +18,10 @@ class AdminController < ApplicationController
       redirect_to url_for(paramaters)
     end
 
-    def flash_and_render(partial)
-      flash_fail
-      render partial
-    end
-
-    def flash_fail
+    def flash_and_render(partial, record: nil)
       flash.now[:alert] = t('controller.actions.fail')
+      flash.now[:error] = record.errors.full_messages if record.present?
+      render partial
     end
 
     def available_regions

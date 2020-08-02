@@ -21,10 +21,19 @@
 #
 # rubocop:enable Layout/LineLength
 
-class FaqCategory < Category
-  has_many :faqs, -> { order(:position) },
-           class_name: 'Faq',
-           inverse_of: :category,
-           foreign_key: 'category_id',
-           dependent: :restrict_with_exception
+require 'rails_helper'
+
+RSpec.describe FaqCategory, type: :model do
+  describe 'associations' do
+    it { should have_many(:faqs).dependent(:restrict_with_exception) }
+  end
+
+  describe 'validations' do
+    subject { create(:faq_category) }
+
+    it do
+      should validate_uniqueness_of(:name).scoped_to(%i[type region])
+                                          .case_insensitive
+    end
+  end
 end

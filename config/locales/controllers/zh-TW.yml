@@ -3,4 +3,5 @@ zh-TW:
     actions:
       create_success: "%{resource}新增成功"
       update_success: "%{resource}已更新"
+      destroy_success: "%{resource}已刪除"
       fail: 請檢視錯誤

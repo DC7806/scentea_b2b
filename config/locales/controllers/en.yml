@@ -3,4 +3,5 @@ en:
     actions:
       create_success: "%{resource} Created"
       update_success: "%{resource} Updated"
+      destroy_success: "%{resource} Deleted"
       fail: Record Not Saved
