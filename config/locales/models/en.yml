@@ -5,6 +5,8 @@ en:
     models:
       account: Account
       admin_user: Admin User
+      faq: FAQ
+      faq_category: FAQ Category
       user: User
     attributes:
       account:
@@ -26,6 +28,18 @@ en:
       admin_user:
         password: Password
         password_confirmation: Password Confirmation
+      category:
+        name: Name
+        name_en: Name - EN
+        name_zh_tw: Name - ZH
+      faq:
+        category_id: Category
+        description: Description
+        description_en: Description - EN
+        description_zh_tw: Description - ZH
+        title: Title
+        title_en: Title - EN
+        title_zh_tw: Title - ZH
       user:
         current_password: Current Password
         email: Email
@@ -38,9 +52,10 @@ en:
     errors:
       messages:
         blank: is required
-        not_found: no record found
-        too_short: is too short
         invalid: is invalid
+        not_found: no record found
+        taken: is taken
+        too_short: is too short
       models:
         account:
           taken: is registered

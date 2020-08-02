@@ -5,7 +5,8 @@ module Admin
     before_action :find_account, except: :index
 
     def index
-      @accounts = current_scope.order(id: :desc)
+      @accounts = current_scope.where(region: current_region)
+                               .order(id: :desc)
     end
 
     def edit; end

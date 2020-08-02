@@ -1,0 +1,33 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.border-0
+      = page_header('faq')
+      .m-3.text-right
+        = link_to new_admin_region_faq_path, class: 'text-success'
+          i.fa.fa-plus.fa-2x
+    - @categories.each do |category|
+      - next unless category.faqs.any?
+      .rounded.bg-light.p-3.mb-3
+        h5 = category.name
+        .d-flex.px-2.font-weight-bold
+          .col-1
+          .col-4 = t('activerecord.attributes.faq.title')
+          .col-5 = t('activerecord.attributes.faq.description')
+          .col-2
+        ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+          - category.faqs.each do |faq|
+            li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = faq.id
+              i.col-1.fa.fa-bars.align-self-center.text-center
+              span.col-4.align-self-center
+                = faq.title
+              span.col-5.align-self-center
+                = truncate(faq.description, length: 40)
+              span.col-2.text-right
+                = link_to edit_admin_region_faq_path(id: faq),
+                          class: 'btn btn-primary btn-sm' do
+                  i.fa.fa-pencil
+                = link_to admin_region_faq_path(id: faq),
+                          method: :delete,
+                          data: { confirm: t('utilities.alerts.delete_confirmation') },
+                          class: 'btn btn-danger btn-sm ml-2' do
+                  i.fa.fa-trash

@@ -29,6 +29,14 @@ Rails.application.routes.draw do
 
     resource :admin_users, only: %i[edit update], as: :user
 
-    resources :accounts, only: %i[index edit update]
+    resources :regions, path: '', only: [] do
+      resources :accounts, only: %i[index edit update]
+
+      %i[faqs faq_categories].each do |res|
+        resources res, except: :show do
+          collection { patch :sort }
+        end
+      end
+    end
   end
 end

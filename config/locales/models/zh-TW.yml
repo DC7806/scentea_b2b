@@ -5,6 +5,8 @@ zh-TW:
     models:
       account: 帳戶
       admin_user: 後台管理者
+      faq: FAQ
+      faq_category: FAQ 分類
       user: 使用者
     attributes:
       account:
@@ -26,6 +28,18 @@ zh-TW:
       admin_user:
         password: 密碼
         password_confirmation: 確認密碼
+      category:
+        name: 名稱
+        name_en: 名稱 - 英文
+        name_zh_tw: 名稱 - 中文
+      faq:
+        category_id: 分類
+        description: 敘述
+        description_en: 敘述 - 英文
+        description_zh_tw: 敘述 - 中文
+        title: 標題
+        title_en: 標題 - 英文
+        title_zh_tw: 標題 - 中文
       user:
         current_password: 目前密碼
         email: 信箱
@@ -38,9 +52,10 @@ zh-TW:
     errors:
       messages:
         blank: 為必填項目
-        not_found: 無此紀錄
-        too_short: 太短
         invalid: 無效
+        not_found: 無此紀錄
+        taken: 已重複
+        too_short: 太短
       models:
         account:
           taken: 已被其他用戶註冊

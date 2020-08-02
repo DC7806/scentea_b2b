@@ -1,0 +1,4 @@
+ul.mb-2.px-2.py-3.bg-danger.text-white.rounded
+  - messages.each.with_index(1) do |message, index|
+    li class="#{'mb-2' unless messages.count == index}"
+      = "#{index}. #{message}"
