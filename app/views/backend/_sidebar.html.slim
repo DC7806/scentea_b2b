@@ -13,9 +13,15 @@ aside
       li.sub-menu
         a[href="#"]
           i.fa.fa-question-circle
-          span = t('activerecord.models.faq_category')
+          span = t('activerecord.models.faq')
         ul.sub
           - available_regions.each do |region|
             li
-              = link_to t("backend.available_regions.#{region}"),
-                        admin_region_faq_categories_path(region_id: region)
+              = link_to t("backend.available_regions.#{region}"), '#'
+              ul.sub
+                li
+                  = link_to t('activerecord.models.faq_category'),
+                            admin_region_faq_categories_path(region_id: region)
+                li
+                  = link_to t('activerecord.models.faq'),
+                            admin_region_faqs_path(region_id: region)

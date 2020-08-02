@@ -1,13 +1,16 @@
 .d-flex.justify-content-around
   section.card.col-12
     header.card-header
-      = page_header('faq_category')
+      = page_header('faq')
     .card-body
       = render 'admin/shared/error_messages', messages: flash[:error] if flash[:error]
-      = simple_form_for category, url: url, wrapper: :horizontal_form do |f|
+      = simple_form_for faq, url: url, wrapper: :horizontal_form do |f|
         = f.input :region, value: current_region, as: :hidden
-        = f.input :name_zh_tw
-        = f.input :name_en
+        = f.input :category_id, as: :select, collection: category_options
+        = f.input :title_zh_tw
+        = f.input :description_zh_tw, as: :text
+        = f.input :title_en
+        = f.input :description_en, as: :text
 
         .form-group.mt-5
           = f.button :submit, class: 'btn btn-block btn-primary'

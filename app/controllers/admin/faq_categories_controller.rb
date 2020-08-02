@@ -20,7 +20,7 @@ module Admin
       @category = current_scope.new(faq_category_params)
       return redirect_to_index if @category.save
 
-      flash_and_render(:new)
+      flash_and_render(:new, record: @category)
     end
 
     def edit; end
@@ -28,7 +28,7 @@ module Admin
     def update
       return redirect_to_index if @category.update(faq_category_params)
 
-      flash_and_render(:edit)
+      flash_and_render(:edit, record: @category)
     end
 
     def destroy
