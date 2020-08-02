@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_163012) do
+ActiveRecord::Schema.define(version: 2020_08_02_054505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,20 @@ ActiveRecord::Schema.define(version: 2020_07_30_163012) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["position"], name: "index_categories_on_position"
     t.index ["region"], name: "index_categories_on_region"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.text "description", default: "", null: false
+    t.integer "region", default: 0, null: false
+    t.integer "position", default: 0, null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id", "position"], name: "index_faqs_on_category_id_and_position"
+    t.index ["category_id", "title"], name: "index_faqs_on_category_id_and_title", unique: true, where: "((title)::text <> ''::text)"
+    t.index ["category_id"], name: "index_faqs_on_category_id"
+    t.index ["region"], name: "index_faqs_on_region"
   end
 
   create_table "mobility_string_translations", force: :cascade do |t|
@@ -94,4 +108,5 @@ ActiveRecord::Schema.define(version: 2020_07_30_163012) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "faqs", "categories"
 end
