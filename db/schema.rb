@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_054505) do
+ActiveRecord::Schema.define(version: 2020_08_02_115456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_02_054505) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["position"], name: "index_categories_on_position"
     t.index ["region"], name: "index_categories_on_region"
+    t.index ["type", "region", "name"], name: "index_categories_on_type_and_region_and_name", unique: true, where: "((name)::text <> ''::text)"
   end
 
   create_table "faqs", force: :cascade do |t|
