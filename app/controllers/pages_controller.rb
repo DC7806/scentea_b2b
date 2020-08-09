@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PagesController < ApplicationController
+class PagesController < FrontendController
   def homepage; end
 
   def faq

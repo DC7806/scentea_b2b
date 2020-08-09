@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-class AccountsController < ApplicationController
+class AccountsController < FrontendController
   layout 'registrations'
 
-  before_action :authenticate_user!
-  before_action :redirect_pending_account
   before_action :find_account
   before_action :region_options, only: %i[edit update]
 
@@ -23,10 +21,6 @@ class AccountsController < ApplicationController
 
     def find_account
       @account = current_user.account
-    end
-
-    def redirect_pending_account
-      return redirect_to complete_account_registration_path if current_user.account.pending?
     end
 
     def region_options
