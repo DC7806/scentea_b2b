@@ -1,0 +1,15 @@
+header {
+  .dropdown-menu {
+    min-width: 11rem;
+  }
+
+  .header_settings {
+    .tt-dropdown-menu {
+      width: unset;
+    }
+    .tt-dropdown-inner {
+      padding: 1em;
+    }
+  }
+}
+

@@ -35,10 +35,16 @@ zh-TW:
     update: "編輯 %{resource}"
   frontend:
     header:
-      links:
+      links: &links
         account_info: 帳戶管理
-        edit_user: 編輯使用者帳戶
-        edit_account: 編輯公司帳戶
+        edit_user: 使用者帳戶
+        edit_account: 公司帳戶
+        locale_en: 英文
+        locale_zh: 中文
+    mobile_menu:
+      links:
+        <<: *links
+        settings: 語言設定
   users:
     registrations:
       new:

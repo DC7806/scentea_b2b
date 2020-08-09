@@ -35,10 +35,16 @@ en:
     update: "Edit %{resource}"
   frontend:
     header:
-      links:
+      links: &links
         account_info: Account Info
-        edit_user: Edit User Account
-        edit_account: Edit Company Account
+        edit_user: User Account
+        edit_account: Company Account
+        locale_en: EN
+        locale_zh: ZH
+    mobile_menu:
+      links:
+        <<: *links
+        settings: Settings
   users:
     registrations:
       new:
