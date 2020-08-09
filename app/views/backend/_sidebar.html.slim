@@ -25,3 +25,18 @@ aside
                 li
                   = link_to t('activerecord.models.faq'),
                             admin_region_faqs_path(region_id: region)
+      li.sub-menu
+        a[href="#"]
+          i.fa.fa-question-circle
+          span = t('activerecord.models.article')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("backend.available_regions.#{region}"), '#'
+              ul.sub
+                li
+                  = link_to t('activerecord.models.article_category'),
+                            admin_region_article_categories_path(region_id: region)
+                / li
+                /   = link_to t('activerecord.models.faq'),
+                /             admin_region_faqs_path(region_id: region)
