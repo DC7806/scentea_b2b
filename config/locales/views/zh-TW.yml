@@ -38,6 +38,7 @@ zh-TW:
       links: &links
         account_info: 帳戶管理
         edit_user: 使用者帳戶
+        faq: 常見問題
         edit_account: 公司帳戶
         locale_en: 英文
         locale_zh: 中文
