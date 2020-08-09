@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :regions, path: '', only: [] do
       resources :accounts, only: %i[index edit update]
 
-      %i[faqs faq_categories].each do |res|
+      %i[faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
           collection { patch :sort }
         end
