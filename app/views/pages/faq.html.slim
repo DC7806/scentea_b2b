@@ -1,0 +1,22 @@
+#tt-pageContent
+  .container-indent
+    .container.container-fluid-custom-mobile-padding
+      h1.tt-title-subpages
+        = t('.title')
+
+      - @faq_categories.each do |category|
+
+          h2.tt-base-color.small
+            = category.name
+          .tt-box-faq-listing
+            .row
+              - category.faqs.each do |faq|
+                .col-sm-12.col-md-6
+                  .tt-box-faq
+                    h6.tt-title
+                      = faq.title
+                    p
+                      = faq.description
+            - unless category == @faq_categories.last
+              hr.hr-01
+
