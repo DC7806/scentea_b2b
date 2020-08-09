@@ -45,6 +45,9 @@ zh-TW:
       links:
         <<: *links
         settings: 語言設定
+  pages:
+    faq:
+      title: 'FAQ'
   users:
     registrations:
       new:

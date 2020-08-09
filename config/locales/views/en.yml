@@ -45,6 +45,9 @@ en:
       links:
         <<: *links
         settings: Settings
+  pages:
+    faq:
+      title: 'FAQ'
   users:
     registrations:
       new:

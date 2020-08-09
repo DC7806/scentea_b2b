@@ -15,7 +15,9 @@ Rails.application.routes.draw do
                 passwords: 'users/passwords'
               }
 
-    root to: 'pages#index'
+
+    root to: 'pages#homepage'
+    get :faq, to: 'pages#faq'
 
     resource :account, only: %i[edit update] do
       scope module: :accounts do
