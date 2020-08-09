@@ -2,8 +2,9 @@
 
 module Accounts
   class RegistrationsController < AccountsController
-    before_action :redirect_pending_account, only: %i[new create]
+    skip_before_action :authenticate_account!
     before_action :redirect_active_account
+    before_action :redirect_pending_account, except: :complete
     before_action :region_options, only: %i[new create]
 
     def new; end
@@ -25,7 +26,15 @@ module Accounts
     private
 
       def redirect_active_account
-        redirect_to root_path if current_user.account.active?
+        redirect_to root_path if current_account.active?
+      end
+
+      def redirect_pending_account
+        redirect_to complete_account_registration_path if current_account.pending?
+      end
+
+      def current_account
+        current_user.account
       end
   end
 end
