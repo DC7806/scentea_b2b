@@ -1,0 +1,26 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.border-0
+      = page_header('article_category')
+      .m-3.text-right
+        = link_to new_admin_region_article_category_path, class: 'text-success'
+          i.fa.fa-plus.fa-2x
+    .d-flex.px-2.font-weight-bold
+      .col-1
+      .col-9 = t('activerecord.attributes.category.name')
+      .col-2
+    ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+      - @categories.each do |category|
+        li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = category.id
+          i.col-1.fa.fa-bars.align-self-center.text-center
+          span.col-9.align-self-center
+            = category.name
+          span.col-2.text-right
+            = link_to edit_admin_region_article_category_path(id: category),
+                      class: 'btn btn-primary btn-sm' do
+              i.fa.fa-pencil
+            = link_to admin_region_article_category_path(id: category),
+                      method: :delete,
+                      data: { confirm: t('utilities.alerts.delete_confirmation') },
+                      class: 'btn btn-danger btn-sm ml-2' do
+              i.fa.fa-trash

@@ -2,19 +2,12 @@
 
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
-    devise_for :admin_users,
-              controllers: {
-                sessions: 'admin_users/sessions',
-                passwords: 'admin_users/passwords'
-              }
-
     devise_for :users,
-              controllers: {
-                registrations: 'users/registrations',
-                sessions: 'users/sessions',
-                passwords: 'users/passwords'
-              }
-
+               controllers: {
+                 registrations: 'users/registrations',
+                 sessions: 'users/sessions',
+                 passwords: 'users/passwords'
+               }
 
     root to: 'pages#homepage'
     get :faq, to: 'pages#faq'
@@ -28,6 +21,12 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :admin_users,
+              controllers: {
+                sessions: 'admin_users/sessions',
+                passwords: 'admin_users/passwords'
+              }
+
   namespace :admin, path: ENV['ADMIN_PATH'] do
     root to: 'pages#index'
 
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
     resources :regions, path: '', only: [] do
       resources :accounts, only: %i[index edit update]
 
-      %i[faqs faq_categories].each do |res|
+      %i[faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
           collection { patch :sort }
         end

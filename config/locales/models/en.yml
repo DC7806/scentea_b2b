@@ -4,6 +4,7 @@ en:
     updated_at: Updated At
     models:
       account: Account
+      article_category: Article Categroy
       admin_user: Admin User
       faq: FAQ
       faq_category: FAQ Category

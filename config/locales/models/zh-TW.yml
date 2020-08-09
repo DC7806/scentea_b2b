@@ -4,6 +4,7 @@ zh-TW:
     updated_at: 修改日期
     models:
       account: 帳戶
+      article_category: 文章分類
       admin_user: 後台管理者
       faq: FAQ
       faq_category: FAQ 分類
