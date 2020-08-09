@@ -27,4 +27,6 @@ class FaqCategory < Category
            inverse_of: :category,
            foreign_key: 'category_id',
            dependent: :restrict_with_exception
+
+  scope :with_faqs, -> { joins(:faqs).distinct }
 end

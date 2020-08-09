@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
     end
   end
 
-  protected
+  private
 
     def find_account
       @account = current_user.account
@@ -47,8 +47,6 @@ class AccountsController < ApplicationController
               :tax_id_number
             )
     end
-
-  private
 
     def current_scope
       @current_scope ||= Account

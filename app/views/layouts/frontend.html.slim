@@ -9,7 +9,7 @@ html
     = stylesheet_pack_tag 'frontend', media: 'all'
     = javascript_pack_tag 'frontend', defer: true
 
-  body class="min-vh-100 d-flex flex-column justify-content-between #{yield :body_class_name}"
+  body class="#{yield :body_class_name}"
     = render 'frontend/header'
     - if flash[:notice] || flash[:alert]
       = render 'shared/notification'
