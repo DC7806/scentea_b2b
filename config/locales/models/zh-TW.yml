@@ -4,8 +4,9 @@ zh-TW:
     updated_at: 修改日期
     models:
       account: 帳戶
-      article_category: 文章分類
       admin_user: 後台管理者
+      article: 飲品知識
+      article_category: 飲品知識分類
       faq: FAQ
       faq_category: FAQ 分類
       user: 使用者
@@ -29,6 +30,21 @@ zh-TW:
       admin_user:
         password: 密碼
         password_confirmation: 確認密碼
+      article:
+        banner_data: 圖片
+        category: 分類
+        content: 內容
+        content_en: 內容 - 英文
+        content_zh_tw: 內容 - 中文
+        published: 公開
+        published_at: 發佈時間
+        slug: 網址
+        summary: 摘要
+        summary_en: 摘要 - 英文
+        summary_zh_tw: 摘要 - 中文
+        title: 標題
+        title_en: 標題 - 英文
+        title_zh_tw: 標題 - 中文
       category:
         name: 名稱
         name_en: 名稱 - 英文
@@ -55,6 +71,7 @@ zh-TW:
         blank: 為必填項目
         invalid: 無效
         not_found: 無此紀錄
+        required: 為必填項目
         taken: 已重複
         too_short: 太短
       models:

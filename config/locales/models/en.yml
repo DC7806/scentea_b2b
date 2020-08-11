@@ -4,8 +4,9 @@ en:
     updated_at: Updated At
     models:
       account: Account
-      article_category: Article Categroy
       admin_user: Admin User
+      article: Blog
+      article_category: Blog Categroy
       faq: FAQ
       faq_category: FAQ Category
       user: User
@@ -29,6 +30,21 @@ en:
       admin_user:
         password: Password
         password_confirmation: Password Confirmation
+      article:
+        banner_data: Banner
+        category: Category
+        content: Content
+        content_en: Content - EN
+        content_zh_tw: Content - ZH
+        published: Published
+        published_at: Published At
+        slug: URL
+        summary: Summary
+        summary_en: Summary - EN
+        summary_zh_tw: Summary - ZH
+        title: Title
+        title_en: Title - EN
+        title_zh_tw: Title - ZH
       category:
         name: Name
         name_en: Name - EN
@@ -55,6 +71,7 @@ en:
         blank: is required
         invalid: is invalid
         not_found: no record found
+        required: is required
         taken: is taken
         too_short: is too short
       models:

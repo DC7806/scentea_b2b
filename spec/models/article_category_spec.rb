@@ -21,12 +21,19 @@
 #
 # rubocop:enable Layout/LineLength
 
-class ArticleCategory < Category
-  has_many :articles, -> { order(:position) },
-           class_name: 'Article',
-           inverse_of: :category,
-           foreign_key: 'category_id',
-           dependent: :restrict_with_exception
+require 'rails_helper'
 
-  scope :with_articles, -> { joins(:articles).distinct }
+RSpec.describe ArticleCategory, type: :model do
+  describe 'associations' do
+    it { should have_many(:articles).dependent(:restrict_with_exception) }
+  end
+
+  describe 'validations' do
+    subject { create(:article_category) }
+
+    it do
+      should validate_uniqueness_of(:name).scoped_to(%i[type region])
+                                          .case_insensitive
+    end
+  end
 end
