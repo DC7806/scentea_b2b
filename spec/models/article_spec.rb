@@ -41,7 +41,7 @@ RSpec.describe Article, type: :model do
   describe 'validations' do
     subject { create(:article) }
 
-    it { should validate_presence_of(:banner_data) }
+    it { should validate_presence_of(:banner) }
     it { should validate_presence_of(:category) }
     it { should validate_presence_of(:content_zh_tw) }
     it { should validate_presence_of(:published_at) }

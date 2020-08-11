@@ -32,7 +32,7 @@
 # rubocop:enable Layout/LineLength
 
 class Article < ApplicationRecord
-  include ImageUploader::Attachment(:banner)
+  include ArticleBannerUploader::Attachment(:banner)
 
   extend Mobility
   translates :title,   type: :string
