@@ -1,0 +1,15 @@
+zh-TW:
+  errors:
+    file:
+      max_size: "檔案大小不得大於 %{max}"
+      min_size: "檔案大小不得小於 %{min}"
+      max_width: "最大寬度不得大於 %{max}px"
+      min_width: "最小寬度不得小於 %{min}px"
+      max_height: "最大高度不得大於 %{max}px"
+      min_height: "最小高度不得小於 %{min}px"
+      max_dimensions: "最大尺寸不得大於 %{dims}"
+      min_dimensions: "最小尺寸不得小於 %{dims}"
+      mime_type_inclusion: "允許檔案類型：%{list}}"
+      mime_type_exclusion: "禁用檔案類型：%{list}}"
+      extension_inclusion: "允許檔案類型：%{list}}"
+      extension_exclusion: "禁用檔案類型：%{list}}"
