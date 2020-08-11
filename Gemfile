@@ -13,6 +13,7 @@ gem 'rails', '~> 6.0.3.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.1.1'
 
+gem 'aws-sdk-s3', '~> 1.77.0'
 gem 'image_processing', '~> 1.11.0'
 gem 'shrine', '~> 3.2.2'
 gem 'simple_form', '~> 5.0.2'
