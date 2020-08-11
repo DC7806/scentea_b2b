@@ -24,6 +24,9 @@ zh-TW:
       edit:
         account_info: 帳戶資訊
         user_info: 使用者資訊
+    articles:
+      form:
+        basic_info: 基本資訊
   backend:
     available_regions:
       domestic: 台灣
