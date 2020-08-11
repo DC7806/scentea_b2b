@@ -9,7 +9,7 @@
             = t('.basic_info')
         li.nav-item
           a.nav-link data-toggle='tab' href='#banner'
-            = t('activerecord.attributes.article.banner_data')
+            = t('activerecord.attributes.article.banner')
         li.nav-item
           a.nav-link data-toggle='tab' href='#content'
             = t('activerecord.attributes.article.content')
@@ -32,7 +32,8 @@
             = f.input :published_at, as: :string,
                                      input_html: { data: { controller: 'flatpickr', published_date: f.object.published_at } }
           #banner.tab-pane.fade.pt-4
-            = f.input :banner_data
+            = f.input :banner, as: :hidden, input_html: { value: f.object.cached_banner_data }
+            = f.input :banner, as: :file
           #content.tab-pane.fade.pt-4
             - if current_region == 'foreign'
               ul.nav.nav-tabs

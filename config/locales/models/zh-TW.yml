@@ -31,7 +31,7 @@ zh-TW:
         password: 密碼
         password_confirmation: 確認密碼
       article:
-        banner_data: 圖片
+        banner: 圖片
         category: 分類
         content: 內容
         content_en: 內容 - 英文
