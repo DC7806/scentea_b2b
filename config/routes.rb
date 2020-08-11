@@ -28,6 +28,8 @@ Rails.application.routes.draw do
               }
 
   namespace :admin, path: ENV['ADMIN_PATH'] do
+    mount Shrine.presign_endpoint(:cache) => '/s3/params'
+
     root to: 'pages#index'
 
     resource :admin_users, only: %i[edit update], as: :user
