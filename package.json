@@ -10,6 +10,7 @@
     "@uppy/core": "^1.13.0",
     "@uppy/file-input": "^1.4.16",
     "bootstrap": "^4.4.1",
+    "ckeditor5-custom-build": "file:./ckeditor5",
     "classlist-polyfill": "^1.2.0",
     "core-js": "^3.6.4",
     "element-remove": "^1.0.4",
