@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   namespace :admin, path: ENV['ADMIN_PATH'] do
     mount Shrine.presign_endpoint(:cache) => '/s3/params'
+    post 'ckeditor_upload/:scope', to: 'ckeditor_images#upload'
 
     root to: 'pages#index'
 
