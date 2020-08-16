@@ -5,7 +5,13 @@ class FrontendController < ApplicationController
   before_action :authenticate_account!
   before_action :set_locale
 
+  helper_method :article_categories
+
   private
+
+    def current_account_region
+      current_user.account.region
+    end
 
     def authenticate_account!
       case current_user.account.status
@@ -37,5 +43,13 @@ class FrontendController < ApplicationController
 
     def default_url_options
       { locale: I18n.locale }
+    end
+
+    def article_categories
+      @article_categories ||=
+        ArticleCategory.with_articles
+                       .includes(:string_translations)
+                       .where(region: current_account_region)
+                       .order(:position)
     end
 end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     root to: 'pages#homepage'
     get :faq, to: 'pages#faq'
 
+    resources :articles, only: %i[index show], param: :slug
+
     resource :account, only: %i[edit update] do
       scope module: :accounts do
         resource :registrations, as: :registration, only: %i[new create] do
