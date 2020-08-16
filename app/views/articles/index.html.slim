@@ -32,3 +32,7 @@
                       = l(article.published_at.to_date, format: :default)
                   .tt-btn
                     = link_to t('utilities.buttons.read_more'), article_path(slug: article.slug), class: 'btn'
+
+      - if @articles.total_count > @per_page
+              section.content-indent.d-flex.justify-content-center
+                = paginate @articles

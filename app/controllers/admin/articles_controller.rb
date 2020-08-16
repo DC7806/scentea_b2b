@@ -9,10 +9,13 @@ module Admin
       associations =
         [:string_translations, category: :string_translations]
 
+      @per_page = 20
       @articles =
         current_scope.includes(associations)
                      .where(region: current_region)
                      .order(published_at: :desc)
+                     .page(params[:page])
+                     .per(@per_page)
     end
 
     def new

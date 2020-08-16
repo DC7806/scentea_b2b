@@ -7,9 +7,12 @@ class ArticlesController < FrontendController
       category: :string_translations
     ]
 
+    @per_page = 10
     @articles = articles.published
                         .includes(associations)
                         .order(published_at: :desc)
+                        .page(params[:page])
+                        .per(@per_page)
   end
 
   def show
