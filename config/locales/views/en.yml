@@ -27,6 +27,12 @@ en:
     articles:
       form:
         basic_info: Basic Info
+  articles:
+    index:
+      all_articles: All Articles
+      title: Articles
+    show:
+      related_articles: Related Articles
   backend:
     available_regions:
       domestic: Taiwan
@@ -39,7 +45,10 @@ en:
   frontend:
     header:
       links: &links
+        affiliation: Affiliation
+        articles: Artices
         account_info: Account Info
+        all_products: All Products
         edit_user: User Account
         edit_account: Company Account
         faq: FAQ
@@ -84,6 +93,7 @@ en:
       forget_password: Forget Password?
       log_in: Log In
       log_out: Log Out
+      read_more: Read More
       next_step: Next
     alerts:
       delete_confirmation: Sure to delete the item?

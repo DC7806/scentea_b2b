@@ -1,0 +1,37 @@
+#tt-pageContent
+  .container-indent
+    .container.container-fluid-custom-mobile-padding
+      .row.justify-content-center
+        .col-xs-12.col-md-10.col-lg-8.col-md-auto
+          .tt-post-single
+            h1.tt-title
+              = @article.title
+            .tt-autor
+              = l(@article.published_at.to_date, format: :default)
+            .tt-post-content
+              = image_tag @article.banner_url(:large), alt: @article.title
+              .blog_content.mt-4
+                = @article.content.html_safe
+
+  - if @related_articles.any?
+    .container-indent
+      .container
+        .row.justify-content-center
+          .col-xs-12.col-md-10.col-lg-8.col-md-auto
+            .comments-single-post
+              h6.tt-title-border
+                = t('.related_articles')
+              .tt-blog-thumb-list
+                .row
+                  - @related_articles.each do |article|
+                    .col-sm-6
+                      .tt-blog-thumb
+                        .tt-img
+                          = link_to article_path(slug: article.slug)
+                            = image_tag article.banner_url(:small),
+                                        alt: article.title,
+                                        class: 'w-100'
+                        .tt-title-description
+                          .tt-background
+                          .tt-title
+                            = link_to article.title, article_path(slug: article.slug)

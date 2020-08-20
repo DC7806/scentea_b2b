@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     root to: 'pages#homepage'
     get :faq, to: 'pages#faq'
 
+    resources :articles, only: %i[index show], param: :slug
+
     resource :account, only: %i[edit update] do
       scope module: :accounts do
         resource :registrations, as: :registration, only: %i[new create] do
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
 
   namespace :admin, path: ENV['ADMIN_PATH'] do
     mount Shrine.presign_endpoint(:cache) => '/s3/params'
+    post 'ckeditor_upload/:scope', to: 'ckeditor_images#upload'
 
     root to: 'pages#index'
 

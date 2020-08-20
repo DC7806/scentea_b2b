@@ -1,5 +1,7 @@
 zh-TW:
   errors:
+    upload:
+      fail: 上傳失敗
     file:
       max_size: "檔案大小不得大於 %{max}"
       min_size: "檔案大小不得小於 %{min}"

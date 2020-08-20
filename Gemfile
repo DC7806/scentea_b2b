@@ -20,7 +20,9 @@ gem 'simple_form', '~> 5.0.2'
 gem 'slim', '~> 4.0.1'
 
 gem 'acts_as_list', '~> 1.0.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'mobility', '~> 0.8.13'
+gem 'ransack', '~> 2.3.2'
 gem 'strong_migrations', '~> 0.6.0'
 
 gem 'devise', '~> 4.7.1'

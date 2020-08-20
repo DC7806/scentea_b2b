@@ -1,5 +1,7 @@
 zh-TW:
   errors:
+    upload:
+      fail: Upload failed
     file:
       max_size: "Max file size: %{max}"
       min_size: "Min file size %{min}"

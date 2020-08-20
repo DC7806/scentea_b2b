@@ -54,4 +54,16 @@ class Article < ApplicationRecord
   validates :title_zh_tw,   presence: true
   validates :slug,  uniqueness: { case_sensitive: false }
   validates :title, uniqueness: { scope: :category_id, case_sensitive: false }
+
+  scope :published, -> { where(published: true) }
+
+  ransacker :region, formatter: proc { |v| regions[v] } do |parent|
+    parent.table[:region]
+  end
+
+  def related_articles
+    self.class.published
+        .ransack(category_id_eq: category_id, id_not_eq: id)
+        .result
+  end
 end
