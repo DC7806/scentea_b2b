@@ -24,6 +24,9 @@ en:
       edit:
         account_info: Account Info
         user_info: User Info
+    articles:
+      form:
+        basic_info: Basic Info
   backend:
     available_regions:
       domestic: Taiwan

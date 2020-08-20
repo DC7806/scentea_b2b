@@ -1,0 +1,69 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('article')
+    .card-body
+      ul.nav.nav-tabs
+        li.nav-item
+          a.nav-link.active data-toggle='tab' href='#basic-info'
+            = t('.basic_info')
+        li.nav-item
+          a.nav-link data-toggle='tab' href='#banner'
+            = t('activerecord.attributes.article.banner_data')
+        li.nav-item
+          a.nav-link data-toggle='tab' href='#content'
+            = t('activerecord.attributes.article.content')
+
+      = render 'admin/shared/error_messages', klass: 'mt-4', messages: flash[:error] if flash[:error]
+
+      = simple_form_for article, url: url, wrapper: :horizontal_form do |f|
+        .tab-content
+          #basic-info.tab-pane.fade.active.show.pt-4
+            = f.input :region, value: current_region,
+                               as: :hidden
+            = f.input :published, as: :select,
+                                  required: true
+            = f.association :category, as: :select,
+                                       collection: category_options
+            = f.input :title_zh_tw
+            - if current_region == 'foreign'
+              = f.input :title_en, required: true
+            = f.input :slug
+            = f.input :published_at, as: :string,
+                                     input_html: { data: { controller: 'flatpickr', published_date: f.object.published_at } }
+          #banner.tab-pane.fade.pt-4
+            = f.input :banner_data
+          #content.tab-pane.fade.pt-4
+            - if current_region == 'foreign'
+              ul.nav.nav-tabs
+                li.nav-item
+                  a.nav-link.active data-toggle='tab' href='#summary_zh_tw'
+                    = t('activerecord.attributes.article.summary_zh_tw')
+                li.nav-item
+                  a.nav-link data-toggle='tab' href='#summary_en'
+                    = t('activerecord.attributes.article.summary_en')
+              .tab-content
+                #summary_zh_tw.tab-pane.fade.active.show.pt-4
+                  = f.input :summary_zh_tw, as: :text
+                #summary_en.tab-pane.fade.pt-4
+                  = f.input :summary_en, as: :text, required: true
+              ul.nav.nav-tabs
+                li.nav-item
+                  a.nav-link.active data-toggle='tab' href='#content_zh_tw'
+                    = t('activerecord.attributes.article.content_zh_tw')
+                li.nav-item
+                  a.nav-link data-toggle='tab' href='#content_en'
+                    = t('activerecord.attributes.article.content_en')
+              .tab-content
+                #content_zh_tw.tab-pane.fade.active.show.pt-4
+                  = f.input :content_zh_tw, as: :text
+                #content_en.tab-pane.fade.pt-4
+                  = f.input :content_en, as: :text, required: true
+            - else
+              = f.input :summary_zh_tw, as: :text
+              = f.input :content_zh_tw, as: :text
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        .form-group
+          = go_back_button

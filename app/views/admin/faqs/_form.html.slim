@@ -3,7 +3,7 @@
     header.card-header
       = page_header('faq')
     .card-body
-      = render 'admin/shared/error_messages', messages: flash[:error] if flash[:error]
+      = render 'admin/shared/error_messages', klass: nil, messages: flash[:error] if flash[:error]
       = simple_form_for faq, url: url, wrapper: :horizontal_form do |f|
         = f.input :region, value: current_region, as: :hidden
         = f.input :category_id, as: :select, collection: category_options
