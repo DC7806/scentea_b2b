@@ -67,8 +67,8 @@ zh-TW:
         service_email_zh_tw: 客服信箱 - 台灣
         gtm_id: GTM ID
         fb_id: Facebook ID
-        logo_data: Logo
-        favicon_data: Favicon
+        logo: Logo
+        favicon: Favicon
       user:
         current_password: 目前密碼
         email: 信箱

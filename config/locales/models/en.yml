@@ -67,8 +67,8 @@ en:
         service_email_zh_tw: Service Email - Taiwan
         gtm_id: GTM ID
         fb_id: Facebook ID
-        logo_data: Logo
-        favicon_data: Favicon
+        logo: Logo
+        favicon: Favicon
       user:
         current_password: Current Password
         email: Email

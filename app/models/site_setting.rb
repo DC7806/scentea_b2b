@@ -17,6 +17,9 @@
 #
 
 class SiteSetting < ApplicationRecord
+  include SiteFaviconUploader::Attachment(:favicon)
+  include SiteLogoUploader::Attachment(:logo)
+
   extend Mobility
   translates :customization_form_url, type: :string, fallbacks: false
   translates :service_email, type: :string

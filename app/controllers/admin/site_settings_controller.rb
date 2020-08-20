@@ -29,10 +29,10 @@ module Admin
         params.require(:site_setting).permit(
           :customization_form_url_en,
           :customization_form_url_zh_tw,
-          :favicon_data,
+          :favicon,
           :fb_id,
           :gtm_id,
-          :logo_data,
+          :logo,
           :service_email_en,
           :service_email_zh_tw,
           :site_name_en,

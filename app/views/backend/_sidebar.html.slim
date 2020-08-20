@@ -40,3 +40,7 @@ aside
                 li
                   = link_to t('activerecord.models.article'),
                             admin_region_articles_path(region_id: region)
+      li
+        = link_to edit_admin_site_settings_path do
+          i.fa.fa-gears
+          span = t('activerecord.models.site_setting')
