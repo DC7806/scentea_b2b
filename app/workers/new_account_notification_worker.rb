@@ -4,9 +4,7 @@ class NewAccountNotificationWorker
   include Sidekiq::Worker
   sidekiq_options retry: 3
 
-  def perform(account_id)
-    account = Account.find(account_id)
-
-    AccountMailer.new_account(account).deliver
+  def perform
+    AccountMailer.new_account.deliver
   end
 end
