@@ -1,0 +1,20 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('site_setting')
+    .card-body
+      = render 'admin/shared/error_messages', klass: nil, messages: flash[:error] if flash[:error]
+      = simple_form_for @site_setting, url: admin_site_settings_path, wrapper: :horizontal_form do |f|
+        = f.input :site_name_zh_tw
+        = f.input :site_name_en
+        = f.input :service_email_zh_tw
+        = f.input :service_email_en
+        = f.input :customization_form_url_zh_tw
+        = f.input :customization_form_url_en
+        = f.input :gtm_id
+        = f.input :fb_id
+        = f.input :logo_data
+        = f.input :favicon_data
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
