@@ -1,8 +1,7 @@
 doctype html
 html
   head
-    title
-      | SCENTEA B2B
+    = display_meta_tags site: site_settings.site_name, icon: site_settings.favicon_url(:small)
     meta name='viewport' content='width=device-width, initial-scale=1'
     = csrf_meta_tags
     = csp_meta_tag

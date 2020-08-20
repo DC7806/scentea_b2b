@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
+  helper_method :site_settings
+
   protected
 
     def configure_permitted_parameters
@@ -39,6 +41,10 @@ class ApplicationController < ActionController::Base
       flash[:notice] =
         t("controller.actions.#{action_name}_success",
           resource: current_scope.model_name.human)
+    end
+
+    def site_settings
+      @site_settings ||= SiteSetting.first
     end
 
     def current_scope
