@@ -10,6 +10,7 @@ en:
       faq: FAQ
       faq_category: FAQ Category
       user: User
+      site_setting: Site Setting
     attributes:
       account:
         address: Address
@@ -57,6 +58,17 @@ en:
         title: Title
         title_en: Title - EN
         title_zh_tw: Title - ZH
+      site_setting:
+        customization_form_url_en: Customization Form URL - Foreign
+        customization_form_url_zh_tw: Customization Form URL - Taiwan
+        site_name_en: Site Name - EN
+        site_name_zh_tw: Site Name - ZH
+        service_email_en: Service Email - Foreign
+        service_email_zh_tw: Service Email - Taiwan
+        gtm_id: GTM ID
+        fb_id: Facebook ID
+        logo_data: Logo
+        favicon_data: Favicon
       user:
         current_password: Current Password
         email: Email
@@ -71,6 +83,7 @@ en:
         blank: is required
         invalid: is invalid
         not_found: no record found
+        one_record_allowed: Only one record allowed
         required: is required
         taken: is taken
         too_short: is too short
