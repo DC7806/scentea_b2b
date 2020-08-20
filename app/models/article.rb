@@ -32,6 +32,8 @@
 # rubocop:enable Layout/LineLength
 
 class Article < ApplicationRecord
+  include ArticleBannerUploader::Attachment(:banner)
+
   extend Mobility
   translates :title,   type: :string
   translates :content, type: :text
@@ -42,7 +44,7 @@ class Article < ApplicationRecord
   belongs_to :category, class_name: 'ArticleCategory',
                         inverse_of: :articles
 
-  validates :banner_data,   presence: true
+  validates :banner,        presence: true
   validates :category,      presence: true
   validates :content_zh_tw, presence: true
   validates :published_at,  presence: true

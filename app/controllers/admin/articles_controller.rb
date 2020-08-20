@@ -59,7 +59,7 @@ module Admin
       def article_params
         params.require(:article)
               .permit(
-                :banner_data,
+                :banner,
                 :category_id,
                 :content_en,
                 :content_zh_tw,

@@ -6,6 +6,9 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.1.1",
+    "@uppy/aws-s3": "^1.6.9",
+    "@uppy/core": "^1.13.0",
+    "@uppy/file-input": "^1.4.16",
     "bootstrap": "^4.4.1",
     "classlist-polyfill": "^1.2.0",
     "core-js": "^3.6.4",
@@ -24,6 +27,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.4.0",
     "webpack-dev-server": "^3.10.3"
   }

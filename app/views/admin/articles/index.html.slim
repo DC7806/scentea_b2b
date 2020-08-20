@@ -8,9 +8,9 @@
 
     .d-flex.px-2.pb-2.mt-3.justify-content-between.font-weight-bold
       .col-1.text-center = t('activerecord.attributes.article.published')
+      .col-2 = t('activerecord.attributes.article.banner')
       .col-2 = t('activerecord.attributes.article.published_at')
       .col-2 = t('activerecord.models.article_category')
-      .col-2 = t('activerecord.attributes.article.banner_data')
       .col-3 = t('activerecord.attributes.article.title')
       .col-2
     ul.list-group
@@ -18,13 +18,13 @@
         li.list-group-item.px-2.d-flex.justify-content-between
           .col-1.text-center.align-self-center
             i class="fa fa-circle text-#{article.published? ? 'success': 'warning'}"
-          .col-2
+          .col-2.align-self-center
+            = image_tag article.banner_url, class: 'w-100'
+          .col-2.align-self-center
             = l(article.published_at.to_date, format: :default)
-          .col-2
+          .col-2.align-self-center
             = article.category.name
-          .col-2
-            = article.banner_data
-          .col-3
+          .col-3.align-self-center
             = article.title
           .col-2.text-right.p-0.align-self-center
             = link_to edit_admin_region_article_path(id: article),
