@@ -8,7 +8,10 @@ html
     = stylesheet_pack_tag 'frontend', media: 'all'
     = javascript_pack_tag 'frontend', defer: true
 
+    = render 'frontend/analytics/gtm', gtm_id: site_settings.gtm_id if site_settings.gtm_id
+
   body class="#{yield :body_class_name}"
+    = render 'frontend/analytics/gtm_noscript', gtm_id: site_settings.gtm_id if site_settings.gtm_id
     = render 'frontend/header'
     - if flash[:notice] || flash[:alert]
       = render 'shared/notification'
