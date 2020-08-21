@@ -12,7 +12,7 @@ module Accounts
     def create
       if @account.update(account_params)
         @account.pending!
-        NewAccountNotificationWorker.perform_async
+        NewAccountNotificationWorker.perform_async(@account.id)
         redirect_to complete_account_registration_path
       else
         render :new
