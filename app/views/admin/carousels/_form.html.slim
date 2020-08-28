@@ -1,0 +1,33 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('carousel')
+    .card-body
+      = render 'admin/shared/error_messages', klass: nil, messages: flash[:error] if flash[:error]
+      = simple_form_for carousel, url: url, wrapper: :horizontal_form do |f|
+        = f.input :region, value: current_region, as: :hidden
+        = f.input :title_zh_tw
+        - if current_region == 'foreign'
+          = f.input :title_en
+        = f.input :subtitle_zh_tw
+        - if current_region == 'foreign'
+          = f.input :subtitle_en
+        = f.input :button_url
+        = f.input :button_text_zh_tw
+        - if current_region == 'foreign'
+          = f.input :button_text_en
+
+        div data-controller="uppy"
+          = f.input :image, as: :hidden,
+                           input_html: { value: f.object.cached_image_data, data: { target: 'uppy.hiddenInput' } }
+          = f.input :image, wrapper: :horizontal_file,
+                           wrapper_html: { class: 'mb-0' },
+                           input_html: { data: { target: 'uppy.input' } }
+          = image_tag f.object.image_url(:large).to_s,
+                      class: 'w-100',
+                      data: { target: 'uppy.previewImage' }
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        .form-group
+          = go_back_button

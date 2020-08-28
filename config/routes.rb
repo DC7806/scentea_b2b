@@ -42,7 +42,7 @@ Rails.application.routes.draw do
       resources :accounts, only: %i[index edit update]
       resources :articles, except: :show
 
-      %i[faqs faq_categories article_categories].each do |res|
+      %i[carousels faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
           collection { patch :sort }
         end
