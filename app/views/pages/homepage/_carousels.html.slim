@@ -1,0 +1,19 @@
+.container-indent.nomargin
+  .mainSlider-layout.carousels
+    .mainSliderSlick.arrow-slick-main
+      - carousels.each do |carousel|
+        .slide
+          .img--holder[data-bg="#{carousel.image_url(:large)}"]
+          .slide-content
+            .container[data-animation="fadeInUpSm" data-animation-delay="0s"]
+              - if carousel.title.present?
+                .tp-caption-01-02
+                  span.tt-white-color
+                    = carousel.title
+              - if carousel.subtitle.present?
+                .tp-caption-01-01.mt-3
+                  span.tt-white-color
+                    = carousel.subtitle
+              - if carousel.button_url.present?
+                .tp-caption-btn
+                  = link_to carousel.button_text, carousel.button_url, class: 'btn btn-xl'
