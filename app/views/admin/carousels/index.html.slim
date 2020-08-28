@@ -3,7 +3,7 @@
     header.card-header.border-0
       = page_header('carousel')
       .m-3.text-right
-        = link_to new_admin_region_carousel_path, class: 'text-success'
+        = link_to new_admin_carousel_path, class: 'text-success'
           i.fa.fa-plus.fa-2x
     .d-flex.px-2.font-weight-bold
       .col-1
@@ -22,10 +22,10 @@
           span.col-3.align-self-center
             = carousel.button_url
           span.col-2.align-self-center.text-right
-            = link_to edit_admin_region_carousel_path(id: carousel),
+            = link_to edit_admin_carousel_path(id: carousel),
                       class: 'btn btn-primary btn-sm' do
               i.fa.fa-pencil
-            = link_to admin_region_carousel_path(id: carousel),
+            = link_to admin_carousel_path(id: carousel),
                       method: :delete,
                       data: { confirm: t('utilities.alerts.delete_confirmation') },
                       class: 'btn btn-danger btn-sm ml-2' do

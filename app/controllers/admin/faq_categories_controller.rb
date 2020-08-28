@@ -9,7 +9,7 @@ module Admin
       end
 
       def current_sort_path
-        sort_admin_region_faq_categories_path
+        sort_admin_faq_categories_path
       end
 
       def current_category_param

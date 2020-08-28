@@ -3,7 +3,7 @@
     header.card-header.border-0
       = page_header('article')
       .m-3.text-right
-        = link_to new_admin_region_article_path, class: 'text-success'
+        = link_to new_admin_article_path, class: 'text-success'
           i.fa.fa-plus.fa-2x
 
     .d-flex.px-2.pb-2.mt-3.justify-content-between.font-weight-bold
@@ -27,10 +27,10 @@
           .col-3.align-self-center
             = article.title
           .col-2.text-right.p-0.align-self-center
-            = link_to edit_admin_region_article_path(id: article),
+            = link_to edit_admin_article_path(id: article),
                       class: 'btn btn-primary btn-sm' do
               i.fa.fa-pencil
-            = link_to admin_region_article_path(id: article),
+            = link_to admin_article_path(id: article),
                       method: :delete,
                       data: { confirm: t('utilities.alerts.delete_confirmation') },
                       class: 'btn btn-danger btn-sm ml-2' do

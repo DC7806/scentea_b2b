@@ -47,7 +47,7 @@ module Admin
       end
 
       def current_sort_path
-        sort_admin_region_carousels_path
+        sort_admin_carousels_path
       end
 
       def carousel_params

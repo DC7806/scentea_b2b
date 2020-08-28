@@ -12,7 +12,7 @@ class AdminController < ApplicationController
     def redirect_to_index
       paramaters = {}
       paramaters[:action] = :index
-      paramaters[:region_id] = current_region
+      paramaters[:region] = current_region
 
       flash_success
       redirect_to url_for(paramaters)
@@ -29,7 +29,7 @@ class AdminController < ApplicationController
     end
 
     def current_region
-      params[:region_id]
+      params[:region]
     end
 
     def current_sort_path
