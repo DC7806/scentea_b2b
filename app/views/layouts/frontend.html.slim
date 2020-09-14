@@ -1,15 +1,17 @@
 doctype html
 html
   head
-    title
-      | SCENTEA B2B
+    = display_meta_tags site: site_settings.site_name, icon: site_settings.favicon_url(:small)
     meta name='viewport' content='width=device-width, initial-scale=1'
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'frontend', media: 'all'
     = javascript_pack_tag 'frontend', defer: true
 
+    = render 'frontend/analytics/gtm', gtm_id: site_settings.gtm_id if site_settings.gtm_id
+
   body class="#{yield :body_class_name}"
+    = render 'frontend/analytics/gtm_noscript', gtm_id: site_settings.gtm_id if site_settings.gtm_id
     = render 'frontend/header'
     - if flash[:notice] || flash[:alert]
       = render 'shared/notification'

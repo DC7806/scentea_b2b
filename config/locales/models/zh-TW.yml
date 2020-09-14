@@ -9,6 +9,7 @@ zh-TW:
       article_category: 飲品知識分類
       faq: FAQ
       faq_category: FAQ 分類
+      site_setting: 網站設定
       user: 使用者
     attributes:
       account:
@@ -57,6 +58,17 @@ zh-TW:
         title: 標題
         title_en: 標題 - 英文
         title_zh_tw: 標題 - 中文
+      site_setting:
+        customization_form_url_en: 客製需求表單連結 - 海外
+        customization_form_url_zh_tw: 客製需求表單連結 - 台灣
+        site_name_en: 網站名稱 - 英文
+        site_name_zh_tw: 網站名稱 - 中文
+        service_email_en: 客服信箱 - 海外
+        service_email_zh_tw: 客服信箱 - 台灣
+        gtm_id: GTM ID
+        fb_id: Facebook ID
+        logo: Logo
+        favicon: Favicon
       user:
         current_password: 目前密碼
         email: 信箱
@@ -71,6 +83,7 @@ zh-TW:
         blank: 為必填項目
         invalid: 無效
         not_found: 無此紀錄
+        one_record_allowed: 僅允許一筆紀錄
         required: 為必填項目
         taken: 已重複
         too_short: 太短

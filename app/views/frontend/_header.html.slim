@@ -7,7 +7,9 @@ header.bg-white
       .tt-header-holder
         .tt-col-obj.tt-obj-logo
           = link_to root_path, class: 'tt-logo tt-logo-alignment'
-            = image_tag 'logo.png'
+            - if site_settings&.logo
+              = image_tag site_settings.logo_url(:small),
+                          alt: site_settings.site_name
         .tt-col-obj.tt-obj-menu
           .tt-desctop-parent-menu.tt-parent-box
             .tt-desctop-menu
@@ -26,6 +28,8 @@ header.bg-white
                     = link_to t('.links.articles'), articles_path
                   li.dropdown
                     = link_to t('.links.affiliation'), '#'
+                  - if current_user
+                    = customization_form_url_menu(list_styles: 'dropdown')
                   li.dropdown
                     = link_to t('.links.faq'), faq_path
                   - if current_user
@@ -48,10 +52,10 @@ header.bg-white
         .tt-col-obj.tt-obj-options.obj-move-right
           .tt-desctop-parent-account.tt-parent-box
             .tt-account.tt-dropdown-obj.d-none.d-sm-block
-              = link_to "https://facebook.com/scenteataiwan",
-                         class: 'tt-dropdown-toggle',
-                         target: :_blank,
-                         referrer: 'nofollow noopener'
+              = link_to "https://facebook.com/#{site_settings&.fb_id}",
+                        class: 'tt-dropdown-toggle',
+                        target: :_blank,
+                        referrer: 'nofollow noopener'
                 i.icon-g-64
 
           .tt-desctop-parent-multi.tt-parent-box.header_settings

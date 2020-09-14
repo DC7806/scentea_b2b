@@ -1,0 +1,36 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('site_setting')
+    .card-body
+      = render 'admin/shared/error_messages', klass: nil, messages: flash[:error] if flash[:error]
+      = simple_form_for @site_setting, url: admin_site_settings_path, wrapper: :horizontal_form do |f|
+        = f.input :site_name_zh_tw
+        = f.input :site_name_en
+        = f.input :service_email_zh_tw
+        = f.input :service_email_en
+        = f.input :customization_form_url_zh_tw
+        = f.input :customization_form_url_en
+        = f.input :gtm_id
+        = f.input :fb_id
+        div data-controller="uppy"
+          = f.input :logo, as: :hidden,
+                           input_html: { value: f.object.cached_logo_data, data: { target: 'uppy.hiddenInput' } }
+          = f.input :logo, wrapper: :horizontal_file,
+                           wrapper_html: { class: 'mb-0' },
+                           input_html: { data: { target: 'uppy.input' } }
+          = image_tag f.object.logo_url(:small).to_s,
+                      class: 'col-12 col-sm-2 offset-sm-3',
+                      data: { target: 'uppy.previewImage' }
+        div data-controller="uppy"
+          = f.input :favicon, as: :hidden,
+                              input_html: { value: f.object.cached_favicon_data, data: { target: 'uppy.hiddenInput' } }
+          = f.input :favicon, wrapper: :horizontal_file,
+                              wrapper_html: { class: 'mb-0' },
+                              input_html: { data: { target: 'uppy.input' } }
+          = image_tag f.object.favicon_url(:small).to_s,
+                      class: 'col-4 offset-4 col-sm-1 offset-sm-3',
+                      data: { target: 'uppy.previewImage' }
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'

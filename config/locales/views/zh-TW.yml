@@ -29,10 +29,10 @@ zh-TW:
         basic_info: 基本資訊
   articles:
     index:
-      all_articles: 所有文章（Bowen 待翻譯）
-      title: 文章（Bowen 待翻譯）
+      all_articles: 所有飲品知識
+      title: 飲品知識
     show:
-      related_articles: 相關文章（Bowen 待翻譯）
+      related_articles: 相關飲品知識
   backend:
     available_regions:
       domestic: 台灣
@@ -47,8 +47,9 @@ zh-TW:
       links: &links
         account_info: 帳戶管理
         affiliation: 商業合作
-        articles: 文章（Bowen 待翻譯）
+        articles: 飲品知識
         all_products: 全系列產品
+        customization: 客製需求
         edit_user: 使用者帳戶
         faq: 常見問題
         edit_account: 公司帳戶
