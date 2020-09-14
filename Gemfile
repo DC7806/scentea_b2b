@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.3.5'
@@ -12,13 +13,16 @@ gem 'rails', '~> 6.0.3.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.1.1'
 
-gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'aws-sdk-s3', '~> 1.77.0'
+gem 'image_processing', '~> 1.11.0'
+gem 'shrine', '~> 3.2.2'
 gem 'simple_form', '~> 5.0.2'
 gem 'slim', '~> 4.0.1'
 
 gem 'acts_as_list', '~> 1.0.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'mobility', '~> 0.8.13'
+gem 'ransack', '~> 2.3.2'
 gem 'strong_migrations', '~> 0.6.0'
 
 gem 'devise', '~> 4.7.1'

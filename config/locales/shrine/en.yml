@@ -1,0 +1,17 @@
+zh-TW:
+  errors:
+    upload:
+      fail: Upload failed
+    file:
+      max_size: "Max file size: %{max}"
+      min_size: "Min file size %{min}"
+      max_width: "Max width: %{max}px"
+      min_width: "Min width: %{min}px"
+      max_height: "Max height: %{max}px"
+      min_height: "Min height: %{min}px"
+      max_dimensions: "Max dimensions: %{dims}"
+      min_dimensions: "Min dimensions %{dims}"
+      mime_type_inclusion: "Permitted file types: %{list}}"
+      mime_type_exclusion: "Disallowed file types: %{list}}"
+      extension_inclusion: "Permitted file extensions: %{list}}"
+      extension_exclusion: "Disallowed file extensions: %{list}}"

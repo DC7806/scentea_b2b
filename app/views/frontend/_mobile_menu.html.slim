@@ -2,31 +2,39 @@
 nav.panel-menu.mobile-main-menu
   ul
     li
-      = link_to t('utilities.buttons.all_products'), '#'
+      = link_to t('.links.all_products'), '#'
     li
-      = link_to t('frontend.navs.blogs'), '#'
+      = link_to t('.links.articles'), articles_path
+    - if current_user
+      - article_categories.each do |category|
+        li.ml-3.mb-1
+          = link_to articles_path(q: { category_id_eq: category.id }), class: 'text-secondary'
+            = category.name
     li
-      = link_to t('frontend.navs.affiliation'), '#'
+      = link_to t('.links.affiliation'), '#'
     li
       = link_to t('.links.faq'), faq_path
     - if current_user
       li
         = link_to t('.links.account_info'), '#'
-      li.ml-2
-        = link_to t('.links.edit_user'), edit_user_registration_path
-      li.ml-2
-        = link_to t('.links.edit_account'), edit_account_path
-      li.ml-2
-        = link_to t('utilities.buttons.log_out'), destroy_user_session_path, method: :delete
+      li.ml-3
+        = link_to t('.links.edit_user'), edit_user_registration_path, class: 'text-secondary'
+      li.ml-3
+        = link_to t('.links.edit_account'),edit_account_path, class: 'text-secondary'
+      li.ml-3
+        = link_to t('utilities.buttons.log_out'),
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: 'text-secondary'
     - else
       li
         = link_to t('utilities.buttons.log_in'), new_user_session_path
     li
       = link_to t('.links.settings'), '#'
-    li.ml-2
-      = link_to t('.links.locale_en'), url_for(locale: 'en')
-    li.ml-2
-      = link_to t('.links.locale_zh'), url_for(locale: 'zh-TW')
+    li.ml-3
+      = link_to t('.links.locale_en'), url_for(locale: 'en'), class: 'text-secondary'
+    li.ml-3
+      = link_to t('.links.locale_zh'), url_for(locale: 'zh-TW'), class: 'text-secondary'
 
 
   .mm-navbtn-names

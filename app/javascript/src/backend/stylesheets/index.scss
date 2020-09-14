@@ -3,6 +3,8 @@ $fa-font-path: "~font-awesome/fonts";
 
 @import "bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome";
+@import "flatpickr";
+@import "@uppy/file-input";
 
 // Libs
 @import "./lib/bootstrap-reset";
@@ -17,3 +19,4 @@ $fa-font-path: "~font-awesome/fonts";
 // Modules
 @import './modules/form';
 @import './modules/notification';
+@import './modules/ckeditor';

@@ -1,0 +1,68 @@
+.d-flex.justify-content-around
+  section.card.col-12
+    header.card-header
+      = page_header('article')
+    .card-body
+      ul.nav.nav-tabs
+        li.nav-item
+          a.nav-link.active data-toggle='tab' href='#basic-info'
+            = t('.basic_info')
+        li.nav-item
+          a.nav-link data-toggle='tab' href='#banner'
+            = t('activerecord.attributes.article.banner')
+        li.nav-item
+          a.nav-link data-toggle='tab' href='#content'
+            = t('activerecord.attributes.article.content')
+
+      = render 'admin/shared/error_messages', klass: 'mt-4', messages: flash[:error] if flash[:error]
+
+      = simple_form_for article, url: url, wrapper: :horizontal_form do |f|
+        .tab-content
+          #basic-info.tab-pane.fade.active.show.pt-4
+            = f.input :region, value: current_region,
+                               as: :hidden
+            = f.input :published, as: :select, required: true
+            = f.association :category, as: :select,
+                                       collection: category_options
+            = f.input :title_zh_tw
+            = f.input :summary_zh_tw, as: :text
+            - if current_region == 'foreign'
+              = f.input :title_en, required: true
+              = f.input :summary_en, as: :text, required: true
+            = f.input :slug
+            = f.input :published_at, as: :string,
+                                     input_html: { data: { controller: 'flatpickr', published_date: f.object.published_at } }
+          #banner.tab-pane.fade.pt-4 data-controller="uppy"
+            = f.input :banner, as: :hidden, input_html: { value: f.object.cached_banner_data, data: { target: 'uppy.hiddenInput' } }
+            = f.input :banner, as: :file, label: false, input_html: { data: { target: 'uppy.input' } }
+            = image_tag f.object.banner_url(:medium).to_s, class: 'col-12 col-lg-6 offset-lg-3', data: { target: 'uppy.previewImage' }
+          #content.tab-pane.fade.pt-4
+            - if current_region == 'foreign'
+              ul.nav.nav-tabs
+                li.nav-item
+                  a.nav-link.active data-toggle='tab' href='#content_zh_tw'
+                    = t('activerecord.attributes.article.content_zh_tw')
+                li.nav-item
+                  a.nav-link data-toggle='tab' href='#content_en'
+                    = t('activerecord.attributes.article.content_en')
+              .tab-content
+                #content_zh_tw.tab-pane.fade.active.show.pt-4
+                  = f.input :content_zh_tw, wrapper: :vertical_form,
+                                            label: false,
+                                            as: :text,
+                                            input_html: { data: { controller: 'ckeditor', 'ckeditor-upload-path': 'articles' } }
+                #content_en.tab-pane.fade.pt-4
+                  = f.input :content_en, wrapper: :vertical_form,
+                                         label: false,
+                                         as: :text,
+                                         input_html: { data: { controller: 'ckeditor', 'ckeditor-upload-path': 'articles' } }
+            - else
+              = f.input :content_zh_tw, wrapper: :vertical_form,
+                                        label: false,
+                                        as: :text,
+                                        input_html: { data: { controller: 'ckeditor', 'ckeditor-upload-path': 'articles' } }
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        .form-group
+          = go_back_button

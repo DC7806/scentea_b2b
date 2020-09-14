@@ -24,6 +24,15 @@ zh-TW:
       edit:
         account_info: 帳戶資訊
         user_info: 使用者資訊
+    articles:
+      form:
+        basic_info: 基本資訊
+  articles:
+    index:
+      all_articles: 所有文章（Bowen 待翻譯）
+      title: 文章（Bowen 待翻譯）
+    show:
+      related_articles: 相關文章（Bowen 待翻譯）
   backend:
     available_regions:
       domestic: 台灣
@@ -37,6 +46,9 @@ zh-TW:
     header:
       links: &links
         account_info: 帳戶管理
+        affiliation: 商業合作
+        articles: 文章（Bowen 待翻譯）
+        all_products: 全系列產品
         edit_user: 使用者帳戶
         faq: 常見問題
         edit_account: 公司帳戶
@@ -81,6 +93,7 @@ zh-TW:
       forget_password: 忘記密碼？
       log_in: 登入
       log_out: 登出
+      read_more: 閱讀更多
       next_step: 下一步
     alerts:
       delete_confirmation: 確認刪除？

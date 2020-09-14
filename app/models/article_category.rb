@@ -21,4 +21,12 @@
 #
 # rubocop:enable Layout/LineLength
 
-class ArticleCategory < Category; end
+class ArticleCategory < Category
+  has_many :articles, -> { order(:position) },
+           class_name: 'Article',
+           inverse_of: :category,
+           foreign_key: 'category_id',
+           dependent: :restrict_with_exception
+
+  scope :with_articles, -> { joins(:articles).distinct }
+end
