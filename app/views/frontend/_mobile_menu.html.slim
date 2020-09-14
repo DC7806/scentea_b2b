@@ -12,6 +12,8 @@ nav.panel-menu.mobile-main-menu
             = category.name
     li
       = link_to t('.links.affiliation'), '#'
+    - if current_user
+      = customization_form_url_menu
     li
       = link_to t('.links.faq'), faq_path
     - if current_user
