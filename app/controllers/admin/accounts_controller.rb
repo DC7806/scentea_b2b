@@ -41,7 +41,7 @@ module Admin
       def send_activation_email(account)
         return unless account.status_changed? && account.active?
 
-        ActivateAccountNotificationWorker.perform_async
+        ActivateAccountNotificationWorker.perform_async(account.id)
       end
   end
 end

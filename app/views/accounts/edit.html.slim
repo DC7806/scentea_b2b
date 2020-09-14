@@ -2,7 +2,9 @@ h2.mb-4 = t('.title')
 
 = simple_form_for @account, url: account_path do |f|
   = f.input :company_name
-  = f.input :region, as: :select, collection: @region_options
+  = f.input :region, disabled: true,
+                     as: :string,
+                     input_html: { value: t("activerecord.attributes.account/region.#{@account.region}") }
   = f.input :contact_email
   = f.input :brand_name
   = f.input :contact_number
