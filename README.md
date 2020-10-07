@@ -1,7 +1,7 @@
 # README
 
 ### Ruby version
-2.6.3
+2.7.1
 
 ### System dependencies
 
