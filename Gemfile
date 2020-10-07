@@ -31,7 +31,7 @@ gem 'strong_migrations', '~> 0.6.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', '~> 2.7.5'
-  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'factory_bot_rails', '~> 6.1.0'
   gem 'faker', '~> 2.11'
   gem 'rubocop', '~> 0.80.1', require: false
   gem 'rubocop-performance', '~> 1.5.2'
