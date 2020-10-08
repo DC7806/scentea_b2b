@@ -20,4 +20,4 @@ Dir.glob('lib/capistrano/**/*.rake').each { |r| import r }
 
 # set :sitemap_roles, :web
 set :rbenv_type, :user
-set :rbenv_ruby, '2.6.3'
+set :rbenv_ruby, '2.7.1'

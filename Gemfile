@@ -3,12 +3,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.3.5'
+gem 'puma', '~> 5.0.2'
 gem 'rails', '~> 6.0.3.3'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.1.1'
@@ -22,7 +22,7 @@ gem 'mailgun-ruby', '~> 1.2'
 gem 'meta-tags', '~> 2.13.0'
 gem 'mobility', '~> 0.8.13'
 gem 'ransack', '~> 2.3.2'
-gem 'shrine', '~> 3.2.2'
+gem 'shrine', '~> 3.3.0'
 gem 'sidekiq', '~> 6.1.1'
 gem 'simple_form', '~> 5.0.2'
 gem 'slim', '~> 4.0.1'
@@ -31,7 +31,7 @@ gem 'strong_migrations', '~> 0.6.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', '~> 2.7.5'
-  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'factory_bot_rails', '~> 6.1.0'
   gem 'faker', '~> 2.11'
   gem 'rubocop', '~> 0.80.1', require: false
   gem 'rubocop-performance', '~> 1.5.2'

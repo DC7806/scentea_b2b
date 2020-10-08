@@ -67,4 +67,7 @@ RSpec.configure do |config|
 
   # Capybara
   config.include Warden::Test::Helpers
+
+  # Devise
+  config.include Devise::Test::IntegrationHelpers
 end
