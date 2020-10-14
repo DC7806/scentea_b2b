@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_100816) do
+ActiveRecord::Schema.define(version: 2020_10_14_153051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,18 @@ ActiveRecord::Schema.define(version: 2020_10_14_100816) do
     t.index ["translatable_id", "translatable_type", "locale", "key"], name: "index_mobility_text_translations_on_keys", unique: true
   end
 
+  create_table "page_sections", force: :cascade do |t|
+    t.integer "position", default: 0, null: false
+    t.integer "region", default: 0, null: false
+    t.integer "style", null: false
+    t.bigint "page_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["page_id"], name: "index_page_sections_on_page_id"
+    t.index ["position"], name: "index_page_sections_on_position"
+    t.index ["region"], name: "index_page_sections_on_region"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "slug", null: false
@@ -163,4 +175,5 @@ ActiveRecord::Schema.define(version: 2020_10_14_100816) do
 
   add_foreign_key "articles", "categories"
   add_foreign_key "faqs", "categories"
+  add_foreign_key "page_sections", "pages", on_delete: :cascade
 end
