@@ -27,6 +27,9 @@ zh-TW:
     articles:
       form:
         basic_info: 基本資訊
+    pages:
+      index:
+        page_content: 分頁內容
   articles:
     index:
       all_articles: 所有飲品知識

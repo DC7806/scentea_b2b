@@ -27,6 +27,9 @@ en:
     articles:
       form:
         basic_info: Basic Info
+    pages:
+      index:
+        page_content: Page Content
   articles:
     index:
       all_articles: All Articles

@@ -2,6 +2,9 @@
 
 module Admin
   class PagesController < AdminController
-    def index; end
+    def index
+      @pages = Page.includes(:string_translations)
+                   .order(:id)
+    end
   end
 end
