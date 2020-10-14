@@ -1,0 +1,32 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.border-0
+      = page_header('carousel')
+      .m-3.text-right
+        = link_to new_admin_carousel_path, class: 'text-success'
+          i.fa.fa-plus.fa-2x
+    .d-flex.px-2.font-weight-bold
+      .col-1
+      .col-2 = t('activerecord.attributes.carousel.image')
+      .col-4 = t('activerecord.attributes.carousel.title')
+      .col-3 = t('activerecord.attributes.carousel.button_url')
+      .col-2
+    ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+      - @carousels.each do |carousel|
+        li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = carousel.id
+          i.col-1.fa.fa-bars.align-self-center.text-center
+          span.col-2.align-self-center
+            = image_tag carousel.image_url(:small), class: 'w-100'
+          span.col-4.align-self-center
+            = carousel.title
+          span.col-3.align-self-center
+            = carousel.button_url
+          span.col-2.align-self-center.text-right
+            = link_to edit_admin_carousel_path(id: carousel),
+                      class: 'btn btn-primary btn-sm' do
+              i.fa.fa-pencil
+            = link_to admin_carousel_path(id: carousel),
+                      method: :delete,
+                      data: { confirm: t('utilities.alerts.delete_confirmation') },
+                      class: 'btn btn-danger btn-sm ml-2' do
+              i.fa.fa-trash

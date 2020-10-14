@@ -20,6 +20,6 @@
           .col-2.align-self-center
             = l(account.created_at.to_date, format: :default)
           .col-2.text-right.p-0.align-self-center
-            = link_to edit_admin_region_account_path(id: account),
+            = link_to edit_admin_account_path(id: account),
                       class: 'btn btn-primary btn-sm' do
               i.fa.fa-pencil

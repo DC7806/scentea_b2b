@@ -3,7 +3,7 @@
     header.card-header
       = page_header('account')
     .card-body
-      = simple_form_for @account, url: admin_region_account_path, wrapper: :horizontal_form do |f|
+      = simple_form_for @account, url: admin_account_path, wrapper: :horizontal_form do |f|
         = f.input :status, as: :select, required: true,
                            collection: Account.statuses.keys.last(2).map { |k| [t("activerecord.attributes.account/status.#{k}"), k]}
 

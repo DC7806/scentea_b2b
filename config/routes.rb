@@ -38,11 +38,11 @@ Rails.application.routes.draw do
     resource :admin_users, only: %i[edit update], as: :user
     resource :site_settings, only: %i[edit update]
 
-    resources :regions, path: '', only: [] do
+    scope ':region' , region: /domestic|foreign/ do
       resources :accounts, only: %i[index edit update]
       resources :articles, except: :show
 
-      %i[faqs faq_categories article_categories].each do |res|
+      %i[carousels faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
           collection { patch :sort }
         end

@@ -7,6 +7,7 @@ zh-TW:
       admin_user: 後台管理者
       article: 飲品知識
       article_category: 飲品知識分類
+      carousel: 首頁輪播圖
       faq: FAQ
       faq_category: FAQ 分類
       site_setting: 網站設定
@@ -46,6 +47,16 @@ zh-TW:
         title: 標題
         title_en: 標題 - 英文
         title_zh_tw: 標題 - 中文
+      carousel:
+        button_text_en: 按鈕文字 - 英文
+        button_text_zh_tw: 按鈕文字 - 中文
+        button_url: 按鈕連結
+        image: 圖片
+        subtitle_en: 副標題 - 英文
+        subtitle_zh_tw: 副標題 - 中文
+        title: 主標題
+        title_en: 主標題 - 英文
+        title_zh_tw: 主標題 - 中文
       category:
         name: 名稱
         name_en: 名稱 - 英文
