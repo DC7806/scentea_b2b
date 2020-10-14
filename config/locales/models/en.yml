@@ -7,6 +7,7 @@ en:
       admin_user: Admin User
       article: Blog
       article_category: Blog Categroy
+      carousel: Homepage Carousel
       faq: FAQ
       faq_category: FAQ Category
       user: User
@@ -46,6 +47,16 @@ en:
         title: Title
         title_en: Title - EN
         title_zh_tw: Title - ZH
+      carousel:
+        button_text_en: Button Text - EN
+        button_text_zh_tw: Button Text - CH
+        button_url: Button URL
+        image: Image
+        subtitle_en: Subtitle - EN
+        subtitle_zh_tw: Subtitle - CH
+        title: Title
+        title_en: Title - EN
+        title_zh_tw: Title - CH
       category:
         name: Name
         name_en: Name - EN

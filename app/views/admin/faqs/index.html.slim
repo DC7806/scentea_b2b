@@ -3,7 +3,7 @@
     header.card-header.border-0
       = page_header('faq')
       .m-3.text-right
-        = link_to new_admin_region_faq_path, class: 'text-success'
+        = link_to new_admin_faq_path, class: 'text-success'
           i.fa.fa-plus.fa-2x
     - @categories.each do |category|
       - next unless category.faqs.any?
@@ -23,10 +23,10 @@
               span.col-5.align-self-center
                 = truncate(faq.description, length: 40)
               span.col-2.text-right
-                = link_to edit_admin_region_faq_path(id: faq),
+                = link_to edit_admin_faq_path(id: faq),
                           class: 'btn btn-primary btn-sm' do
                   i.fa.fa-pencil
-                = link_to admin_region_faq_path(id: faq),
+                = link_to admin_faq_path(id: faq),
                           method: :delete,
                           data: { confirm: t('utilities.alerts.delete_confirmation') },
                           class: 'btn btn-danger btn-sm ml-2' do

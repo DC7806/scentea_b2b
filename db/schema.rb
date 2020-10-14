@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_035700) do
+ActiveRecord::Schema.define(version: 2020_08_27_155140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,20 @@ ActiveRecord::Schema.define(version: 2020_08_20_035700) do
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["region"], name: "index_articles_on_region"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
+  end
+
+  create_table "carousels", force: :cascade do |t|
+    t.text "image_data", null: false
+    t.string "title"
+    t.string "subtitle"
+    t.string "button_text"
+    t.string "button_url"
+    t.integer "region", null: false
+    t.integer "position", default: 1, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position"], name: "index_carousels_on_position"
+    t.index ["region"], name: "index_carousels_on_region"
   end
 
   create_table "categories", force: :cascade do |t|

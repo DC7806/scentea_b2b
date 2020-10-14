@@ -4,7 +4,7 @@ module Admin
   module ComponentsHelper
     def go_back_button
       paramaters = {}
-      paramaters[:region_id] = params[:region_id]
+      paramaters[:region] = params[:region]
       paramaters[:action] = :index
 
       link_to t('utilities.buttons.back'),

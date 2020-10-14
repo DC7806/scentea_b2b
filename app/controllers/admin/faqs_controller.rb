@@ -51,7 +51,7 @@ module Admin
       end
 
       def current_sort_path
-        sort_admin_region_faqs_path
+        sort_admin_faqs_path
       end
 
       def category_options
