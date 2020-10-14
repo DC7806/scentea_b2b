@@ -19,6 +19,8 @@ class Page < ApplicationRecord
   extend Mobility
   translates :name, type: :string
 
+  has_many :sections, class_name: 'PageSection', dependent: :destroy
+
   validates :name_en,    presence: true
   validates :name_zh_tw, presence: true
   validates :slug, uniqueness: { case_sensitive: false }

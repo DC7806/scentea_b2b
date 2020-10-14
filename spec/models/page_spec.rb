@@ -18,6 +18,10 @@
 require 'rails_helper'
 
 RSpec.describe Page, type: :model do
+  describe 'associations' do
+    it { should have_many(:sections).class_name('PageSection') }
+  end
+
   describe 'validations' do
     subject { create(:page) }
 
