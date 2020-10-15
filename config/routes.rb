@@ -41,7 +41,11 @@ Rails.application.routes.draw do
     scope ':region' , region: /domestic|foreign/ do
       resources :accounts, only: %i[index edit update]
       resources :articles, except: :show
-      resources :pages, only: :index
+      resources :pages, only: :index do
+        resources :page_sections, except: :show, path: :sections, as: :sections do
+          collection { patch :sort }
+        end
+      end
 
       %i[carousels faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
