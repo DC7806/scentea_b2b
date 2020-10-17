@@ -10,6 +10,7 @@ zh-TW:
       carousel: 首頁輪播圖
       faq: FAQ
       faq_category: FAQ 分類
+      page: 分頁管理
       site_setting: 網站設定
       user: 使用者
     attributes:
@@ -69,6 +70,9 @@ zh-TW:
         title: 標題
         title_en: 標題 - 英文
         title_zh_tw: 標題 - 中文
+      page:
+        name: 名稱
+        slug: 網址
       site_setting:
         customization_form_url_en: 客製需求表單連結 - 海外
         customization_form_url_zh_tw: 客製需求表單連結 - 台灣
