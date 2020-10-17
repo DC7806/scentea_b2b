@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_153051) do
+ActiveRecord::Schema.define(version: 2020_10_17_154859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,6 +145,19 @@ ActiveRecord::Schema.define(version: 2020_10_14_153051) do
     t.index ["slug"], name: "index_pages_on_slug", unique: true
   end
 
+  create_table "section_contents", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "subtitle", default: "", null: false
+    t.text "description", default: "", null: false
+    t.string "link_url", default: "", null: false
+    t.string "link_text", default: "", null: false
+    t.string "image_data"
+    t.bigint "page_section_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["page_section_id"], name: "index_section_contents_on_page_section_id"
+  end
+
   create_table "site_settings", force: :cascade do |t|
     t.string "customization_form_url", default: "", null: false
     t.string "fb_id"
@@ -176,4 +189,5 @@ ActiveRecord::Schema.define(version: 2020_10_14_153051) do
   add_foreign_key "articles", "categories"
   add_foreign_key "faqs", "categories"
   add_foreign_key "page_sections", "pages", on_delete: :cascade
+  add_foreign_key "section_contents", "page_sections", on_delete: :cascade
 end
