@@ -25,6 +25,8 @@
 #
 
 class SectionContent < ApplicationRecord
+  include SectionContentImageUploader::Attachment(:image)
+
   extend Mobility
   translates :description, type: :text
   translates :link_text,   type: :string
