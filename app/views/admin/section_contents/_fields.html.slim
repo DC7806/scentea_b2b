@@ -1,0 +1,44 @@
+- generator.contents.each.with_index(1) do |content, index|
+  = f.simple_fields_for :contents, content,
+                                   child_index: (content.new_record? ? index : nil) do |ff|
+      - if generator.contents.count > 1
+        h6.mb-4 = "#{generator.name} - #{index}"
+
+      - if current_region == 'foreign'
+        - if generator.options.title
+          = ff.input :title_zh_tw
+          = ff.input :title_en
+        - if generator.options.subtitle
+          = ff.input :subtitle_zh_tw
+          = ff.input :subtitle_en
+        - if generator.options.description
+          = ff.input :description_zh_tw, as: :text
+          = ff.input :description_en, as: :text
+        - if generator.options.link
+          = ff.input :link_url_zh_tw
+          = ff.input :link_url_en
+          - if generator.options.link == :with_text
+            = ff.input :link_text_zh_tw
+            = ff.input :link_text_en
+      - else
+        - if generator.options.title
+          = ff.input :title_zh_tw
+        - if generator.options.subtitle
+          = ff.input :subtitle_zh_tw
+        - if generator.options.description
+          = ff.input :description_zh_tw, as: :text
+        - if generator.options.link
+          = ff.input :link_url_zh_tw
+          - if generator.options.link == :with_text
+            = ff.input :link_text_zh_tw
+
+      - if generator.options.image
+        .mb-4 data-controller="uppy"
+          = ff.input :image, as: :hidden,
+                           input_html: { value: ff.object.cached_image_data, data: { target: 'uppy.hiddenInput' } }
+          = ff.input :image, wrapper: :horizontal_file,
+                           wrapper_html: { class: 'mb-0' },
+                           input_html: { data: { target: 'uppy.input' } }
+          = image_tag ff.object.image_url(:large).to_s,
+                      class: 'w-100',
+                      data: { target: 'uppy.previewImage' }

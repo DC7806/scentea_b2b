@@ -11,7 +11,7 @@
         li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = section.id
           i.col-1.fa.fa-bars.align-self-center.text-center
           span.col-9.align-self-center
-            = t("activerecord.attributes.page_section/style.#{section.style}")
+            = SectionContentFieldGenerator.new(section: section, style: section.style).name
           span.col-2.align-self-center.text-right
             = link_to edit_admin_page_section_path(id: section),
                       class: 'btn btn-primary btn-sm' do
