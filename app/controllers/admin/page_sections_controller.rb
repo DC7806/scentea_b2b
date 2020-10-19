@@ -2,11 +2,10 @@
 
 module Admin
   class PageSectionsController < AdminController
-    include Admin::Sortable
-
     before_action :find_section, only: %i[edit update destroy]
     before_action :section_style_options, only: %i[new create]
     helper_method :current_page
+    helper_method :sort_path
 
     def index
       @sections = current_scope.where(
@@ -22,7 +21,11 @@ module Admin
 
     def create
       @section = current_scope.new(section_params)
-      return redirect_to_index if @section.save
+
+      if @section.save
+        build_page_content
+        return redirect_to_index
+      end
 
       flash_and_render(:new, record: @section)
     end
@@ -30,13 +33,30 @@ module Admin
     def edit; end
 
     def update
-      return redirect_to_index if @section.update(section_params)
+      if @section.update(section_params)
+        build_page_content
+        return redirect_to_index
+      end
 
       flash_and_render(:edit, record: @section)
     end
 
     def destroy
-      redirect_to_index if @section.destroy
+      return unless @section.destroy
+
+      build_page_content
+      redirect_to_index
+    end
+
+    def sort
+      sort_item = JSON.parse(params[:sort])
+                      .transform_keys(&:to_sym)
+
+      current_scope.find(sort_item[:id])
+                   .insert_at(sort_item[:position].to_i)
+
+      build_page_content
+      head :ok
     end
 
     private
@@ -57,7 +77,7 @@ module Admin
         )
       end
 
-      def current_sort_path
+      def sort_path
         sort_admin_page_sections_path
       end
 
@@ -65,6 +85,12 @@ module Admin
         @section_style_options ||= current_scope.styles.keys.map do |key|
           [SectionContentStyle.find_by(style: key).name, key]
         end
+      end
+
+      def build_page_content
+        PageContentWorker.perform_async(
+          params[:region], current_page.id
+        )
       end
 
       def section_params

@@ -10,4 +10,10 @@ class SectionContentImageUploader < ImageUploader
       small: magick.resize_to_limit!(300, 300)
     }
   end
+
+  Attacher.promote_block do
+    PromoteWorker.new.perform(
+      self.class.name, record.class.name, record.id, name, file_data
+    )
+  end
 end
