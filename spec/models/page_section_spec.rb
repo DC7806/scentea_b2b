@@ -27,6 +27,7 @@ require 'rails_helper'
 
 RSpec.describe PageSection, type: :model do
   describe 'associations' do
+    it { should have_many(:contents).class_name('SectionContent') }
     it { should belong_to(:page) }
   end
 

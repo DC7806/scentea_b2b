@@ -87,6 +87,18 @@ zh-TW:
         fb_id: Facebook ID
         logo: Logo
         favicon: Favicon
+      section_content:
+        description_en: 敘述 - 英文
+        description_zh_tw: 敘述 - 中文
+        image: 圖片
+        link_text_en: 連結文字 - 英文
+        link_text_zh_tw: 連結文字 - 中文
+        link_url_en: 連結網址 - 英文
+        link_url_zh_tw: 連結網址 - 中文
+        subtitle_en: 副標 - 英文
+        subtitle_zh_tw: 副標 - 中文
+        title_en: 標題 - 英文
+        title_zh_tw: 標題 - 中文
       user:
         current_password: 目前密碼
         email: 信箱

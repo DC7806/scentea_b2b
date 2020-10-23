@@ -32,6 +32,9 @@ class PageSection < ApplicationRecord
     SectionContentStyle.order(:id).collect { |item| [item.style, item.id - 1] }
   ]
 
+  has_many :contents, class_name: 'SectionContent', dependent: :destroy
+  accepts_nested_attributes_for :contents
+
   belongs_to :page
 
   validates :page,          presence: true
