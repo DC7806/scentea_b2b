@@ -1,0 +1,11 @@
+- contents.each do |content|
+  section.container-indent
+    .container
+      .row.justify-content-center
+        .col-md-10.col-lg-9.my-4.text-center
+          h4
+            = content.subtitle(locale: locale)
+          h2
+            = content.title(locale: locale)
+          p.m-0
+            = content.description(locale: locale)

@@ -1,0 +1,11 @@
+section.container.container-indent
+  .row
+    - contents.each do |content|
+      div class="col-md-6 #{'mt-2 mt-md-0' if content == contents.last}"
+        = link_to content.link_url.to_s,
+                  class: 'tt-promo-box tt-one-child border rounded mt-0' do
+          = image_tag content.image_url(:medium, public: true), class: 'w-100'
+          .tt-description
+            .tt-description-wrapper.text-center
+              h2.m-0.text-white
+                = content.title
