@@ -13,6 +13,7 @@ gem 'rails', '~> 6.0.3.3'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.1.1'
 
+gem 'active_hash', '~> 3.1.0'
 gem 'acts_as_list', '~> 1.0.1'
 gem 'aws-sdk-s3', '~> 1.77.0'
 gem 'devise', '~> 4.7.1'
