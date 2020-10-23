@@ -28,6 +28,10 @@ class PageSection < ApplicationRecord
 
   enum region: { domestic: 0, foreign: 1 }
 
+  enum style: Hash[
+    SectionContentStyle.order(:id).collect { |item| [item.style, item.id - 1] }
+  ]
+
   belongs_to :page
 
   validates :page,          presence: true
