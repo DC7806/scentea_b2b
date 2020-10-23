@@ -10,7 +10,10 @@ Rails.application.routes.draw do
                }
 
     root to: 'pages#homepage'
-    get :faq, to: 'pages#faq'
+
+    %w[about affiliation faq].each do |page|
+      get page, action: page.to_sym, controller: 'pages'
+    end
 
     resources :articles, only: %i[index show], param: :slug
 

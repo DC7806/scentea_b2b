@@ -11,7 +11,9 @@ nav.panel-menu.mobile-main-menu
           = link_to articles_path(q: { category_id_eq: category.id }), class: 'text-secondary'
             = category.name
     li
-      = link_to t('.links.affiliation'), '#'
+      = link_to t('.links.affiliation'), affiliation_path
+    li
+      = link_to t('.links.about'), about_path
     - if current_user
       = customization_form_url_menu
     li

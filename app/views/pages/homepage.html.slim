@@ -1,2 +1,3 @@
 #tt-pageContent
   = render 'pages/homepage/carousels', carousels: @carousels if @carousels.any?
+  = raw(@page_content)

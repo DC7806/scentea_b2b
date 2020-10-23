@@ -48,13 +48,14 @@ en:
   frontend:
     header:
       links: &links
-        affiliation: Affiliation
-        articles: Artices
+        about: About
         account_info: Account Info
+        affiliation: Affiliation
         all_products: All Products
+        articles: Artices
         customization: Customization
-        edit_user: User Account
         edit_account: Company Account
+        edit_user: User Account
         faq: FAQ
         locale_en: EN
         locale_zh: ZH

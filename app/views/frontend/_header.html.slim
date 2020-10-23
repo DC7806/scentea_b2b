@@ -27,7 +27,9 @@ header.bg-white
                   li.dropdown
                     = link_to t('.links.articles'), articles_path
                   li.dropdown
-                    = link_to t('.links.affiliation'), '#'
+                    = link_to t('.links.affiliation'), affiliation_path
+                  li.dropdown
+                    = link_to t('.links.about'), about_path
                   - if current_user
                     = customization_form_url_menu(list_styles: 'dropdown')
                   li.dropdown
