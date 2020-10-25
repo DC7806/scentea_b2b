@@ -52,6 +52,6 @@ class ApplicationController < ActionController::Base
     end
 
     def current_account_region
-      current_user.account.region
+      current_user.region
     end
 end
