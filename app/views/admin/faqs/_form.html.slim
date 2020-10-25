@@ -9,8 +9,9 @@
         = f.input :category_id, as: :select, collection: category_options
         = f.input :title_zh_tw
         = f.input :description_zh_tw, as: :text
-        = f.input :title_en
-        = f.input :description_en, as: :text
+        - if current_region == 'foreign'
+          = f.input :title_en
+          = f.input :description_en, as: :text
 
         .form-group.mt-5
           = f.button :submit, class: 'btn btn-block btn-primary'
