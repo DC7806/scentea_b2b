@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include LocaleExtractable
+
   layout 'frontend'
 
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -20,21 +22,7 @@ class ApplicationController < ActionController::Base
   private
 
     def set_locale
-      I18n.locale = params[:locale] || current_user_default_locale ||
-                    extract_locale || I18n.default_locale
-    end
-
-    def extract_locale
-      browser_lang = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/)[0]
-      parsed_locale = params[:locale] || browser_lang
-
-      I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
-    end
-
-    def current_user_default_locale
-      return nil unless current_user
-
-      current_user.account.region == 'domestic' ? 'zh-TW' : 'en'
+      I18n.locale = params[:locale] || extract_locale
     end
 
     def default_url_options

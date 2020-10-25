@@ -60,14 +60,15 @@ header.bg-white
                         referrer: 'nofollow noopener'
                 i.icon-g-64
 
-          .tt-desctop-parent-multi.tt-parent-box.header_settings
-            .tt-multi-obj.tt-dropdown-obj
-              button.tt-dropdown-toggle
-                i.icon-f-79
-              .tt-dropdown-menu
-                .tt-dropdown-inner.p-3
-                  ul
-                    li
-                      = link_to t('.links.locale_en'), url_for(locale: 'en')
-                    li
-                      = link_to t('.links.locale_zh'), url_for(locale: 'zh-TW')
+          - if controller_name == 'sessions' || current_user.account.foreign?
+            .tt-desctop-parent-multi.tt-parent-box.header_settings
+              .tt-multi-obj.tt-dropdown-obj
+                button.tt-dropdown-toggle
+                  i.icon-f-79
+                .tt-dropdown-menu
+                  .tt-dropdown-inner.p-3
+                    ul
+                      li
+                        = link_to t('.links.locale_en'), url_for(locale: 'en')
+                      li
+                        = link_to t('.links.locale_zh'), url_for(locale: 'zh-TW')
