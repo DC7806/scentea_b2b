@@ -20,7 +20,7 @@ en:
       user:
         edit:
           password: Leave it blank if you don't want to change it
-          password_confirmation:
+          password_confirmation: Leave it blank if you don't want to change it
           current_password: Current password is required to confirm changes
 
     # Examples
