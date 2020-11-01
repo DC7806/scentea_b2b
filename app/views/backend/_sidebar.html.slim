@@ -49,6 +49,15 @@ aside
                 li
                   = link_to t('activerecord.models.article'),
                             admin_articles_path(region: region)
+      li.sub-menu
+        a[href="#"]
+          i.fa.fa-laptop
+          span = t('activerecord.models.page')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("backend.available_regions.#{region}"),
+                        admin_pages_path(region: region)
       li
         = link_to edit_admin_site_settings_path do
           i.fa.fa-gears

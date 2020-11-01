@@ -29,6 +29,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  delegate :region, to: :account
+
   belongs_to :account
 
   validates :account,    presence: true

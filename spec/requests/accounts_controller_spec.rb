@@ -2,11 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe AccountsController, type: :request do
-  before do
-    create(:site_setting)
-    sign_in(create(:user))
-  end
+RSpec.describe 'AccountsController', type: :request do
+  include_examples 'sign in user'
 
   describe 'GET accounts#edit' do
     before { get edit_account_path }

@@ -1,0 +1,10 @@
+- contents.each do |content|
+  section.container-fluid.container-indent
+    .row
+      .tt-promo-fullwidth.w-100
+        = image_tag content.image_url(:large, public: true), class: 'w-100'
+        .tt-description
+          .tt-description-wrapper
+            .tt-title-small
+              .tt-white-color
+                = content.title(locale: locale)

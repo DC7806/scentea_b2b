@@ -1,0 +1,14 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.mb-3
+      = page_header('page')
+    div
+      ul.list-group
+        - @pages.each do |page|
+          li.list-group-item.px-2.d-flex.justify-content-between
+            .col-2.align-self-center
+              = page.name
+            .col-10.text-right.p-0.align-self-center
+              = link_to t('.page_content'),
+                        admin_page_sections_path(page_id: page),
+                        class: 'btn btn-primary btn-sm'

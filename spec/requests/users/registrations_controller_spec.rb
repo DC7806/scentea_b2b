@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Users::RegistrationsController, type: :request do
+RSpec.describe 'Users::RegistrationsController', type: :request do
   before do
     Rails.application.env_config['HTTP_ACCEPT_LANGUAGE'] = 'zh-TW'
     create(:site_setting)
@@ -17,6 +17,6 @@ RSpec.describe Users::RegistrationsController, type: :request do
       post user_registration_path, params: { user: user_attrs }
     end
 
-    it { expect(response).to have_http_status(302) }
+    include_examples 'has 302 status code'
   end
 end

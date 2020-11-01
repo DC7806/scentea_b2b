@@ -40,11 +40,9 @@ class Faq < ApplicationRecord
                         inverse_of: :faqs
 
   validates :category,          presence: true
-  validates :description_en,    presence: true
   validates :description_zh_tw, presence: true
   validates :position,          presence: true
   validates :region,            presence: true
-  validates :title_en,          presence: true
   validates :title_zh_tw,       presence: true
   validates :title, uniqueness: { scope: :category_id, case_sensitive: false }
 end

@@ -1,0 +1,3 @@
+= render 'form', section: @section,
+                 form_url: admin_page_section_path(region: current_region, id: @section),
+                 generator: SectionContentFieldGenerator.new(section: @section, style: @section.style)

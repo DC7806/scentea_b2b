@@ -1,0 +1,16 @@
+section.container.container-indent
+  .row.collage.text-center
+    .col-md-6
+      .collage--multiple
+        .collage--multiple--upper
+          .row
+            - [contents[1], contents[2]].each do |content|
+              .col-md-6
+                .px-4.collage--multiple--items.d-flex.align-items-center.justify-content-center style="background: url(#{content.image_url(:medium, public: true)}); background-size: cover;"
+                  h2.m-0.text-white = content.title(locale: locale)
+        .collage--multiple--lower
+          .px-4.collage--multiple--items.d-flex.align-items-center.justify-content-center style="background: url(#{contents.last.image_url(:medium, public: true)}); background-size: cover;"
+            h2.m-0.text-white = contents.last.title(locale: locale)
+    .col-md-6
+      .px-4.collage--main.d-flex.align-items-center.justify-content-center style="background: url(#{contents.first.image_url(:medium, public: true)}); background-size: cover;"
+        h2.m-0.text-white = contents.first.title(locale: locale)
