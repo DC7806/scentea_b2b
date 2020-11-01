@@ -1,0 +1,110 @@
+-
+  id: 1
+  style: single_column_title_subtitle_description_center
+  content_count: 1
+  name_en: Single Column Title Subtitle Description Center
+  name_zh_tw: 單欄：標題副標敘述置中
+  title: true
+  subtitle: true
+  description: true
+  link: false
+  image: false
+-
+  id: 2
+  style: single_column_image
+  content_count: 1
+  name_en: Single Column Image
+  name_zh_tw: 單欄：滿版圖
+  title: false
+  subtitle: false
+  description: false
+  link: false
+  image: true
+-
+  id: 3
+  style: single_column_image_text_left
+  content_count: 1
+  name_en: Single Column Image Text Left
+  name_zh_tw: 單欄：圖片標題副標敘述置左
+  title: true
+  subtitle: true
+  description: true
+  link: false
+  image: true
+-
+  id: 4
+  style: single_column_image_title_center
+  content_count: 1
+  name_en: Single Column Image Title Center
+  name_zh_tw: 單欄：滿版圖標題置中
+  title: true
+  subtitle: false
+  description: false
+  link: false
+  image: true
+-
+  id: 5
+  style: two_column_collage_main_image_right
+  content_count: 4
+  name_en: Two Column Collage Main Image Right
+  name_zh_tw: 雙欄：四圖拼貼大圖右
+  title: true
+  subtitle: false
+  description: false
+  link: false
+  image: true
+-
+  id: 6
+  style: two_column_collage_main_image_left
+  content_count: 4
+  name_en: Two Column Collage Main Image Left
+  name_zh_tw: 雙欄：四圖拼貼大圖左
+  title: true
+  subtitle: false
+  description: false
+  link: false
+  image: true
+-
+  id: 7
+  style: two_column_image_right_title_description_left
+  content_count: 1
+  name_en: Two Column Image Right Title Description Left
+  name_zh_tw: 雙欄：圖左標題敘述右
+  title: true
+  subtitle: false
+  description: true
+  link: false
+  image: true
+-
+  id: 8
+  style: two_column_image_left_title_description_right
+  content_count: 1
+  name_en: Two Column Image Left Title Description Right
+  name_zh_tw: 雙欄：圖右標題敘述左
+  title: true
+  subtitle: false
+  description: true
+  link: false
+  image: true
+-
+  id: 9
+  style: two_column_image_title_link_center
+  content_count: 2
+  name_en: Two Column Image Title Link Center
+  name_zh_tw: 雙欄：圖片標題連結置中
+  title: true
+  subtitle: false
+  description: false
+  link: true
+  image: true
+-
+  id: 10
+  style: four_column_featured_products
+  content_count: 4
+  name_en: Four Column Featured Products
+  name_zh_tw: 四欄：重點產品
+  title: true
+  subtitle: false
+  description: false
+  link: true
+  image: true

@@ -1,0 +1,7 @@
+section.container.container-indent
+  .row
+    - contents.each do |content|
+      .col-sm-6.col-md-3.text-center
+        = link_to content.link_url(locale: locale).to_s do
+          = image_tag content.image_url(:medium, public: true).to_s, class: 'w-100 mb-3'
+          h2 = content.title(locale: locale)

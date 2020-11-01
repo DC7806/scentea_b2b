@@ -5,28 +5,30 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'bootsnap', '>= 1.4.2', require: false
-gem 'jbuilder', '~> 2.7'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 5.0.2'
-gem 'rails', '~> 6.0.3.3'
-gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 5.1.1'
-
+gem 'active_hash', '~> 3.1.0'
 gem 'acts_as_list', '~> 1.0.1'
 gem 'aws-sdk-s3', '~> 1.77.0'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7.1'
+gem 'hiredis', '~> 0.6.3'
 gem 'image_processing', '~> 1.11.0'
+gem 'jbuilder', '~> 2.7'
 gem 'kaminari', '~> 1.2.1'
 gem 'mailgun-ruby', '~> 1.2'
 gem 'meta-tags', '~> 2.13.0'
 gem 'mobility', '~> 0.8.13'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 5.0.2'
+gem 'rails', '~> 6.0.3.3'
 gem 'ransack', '~> 2.3.2'
+gem 'redis', '~> 4.2.2'
+gem 'sass-rails', '>= 6'
 gem 'shrine', '~> 3.3.0'
 gem 'sidekiq', '~> 6.1.1'
 gem 'simple_form', '~> 5.0.2'
 gem 'slim', '~> 4.0.1'
 gem 'strong_migrations', '~> 0.6.0'
+gem 'webpacker', '~> 5.1.1'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

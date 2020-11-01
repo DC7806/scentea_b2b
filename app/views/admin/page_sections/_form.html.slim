@@ -1,0 +1,37 @@
+.d-flex.justify-content-around
+  section.card.col-lg-10
+    header.card-header
+      - if section.new_record?
+        = "#{current_page.name} / #{page_header('page_section')}"
+      - else
+        = "#{current_page.name} / #{generator.name}"
+    .card-body
+      = simple_form_for section, url: form_url,
+                        html: { data: { controller: 'page-contents' } },
+                        wrapper: :horizontal_form do |f|
+        - if section.new_record?
+          = f.input :style, collection: section_style_options,
+                            input_html: { data: { action: 'change->page-contents#select_style'} }
+          div data-target='page-contents.fields'
+          - section_styles.each do |style|
+            template id=style
+              = render "admin/section_contents/#{style}",
+                       f: f,
+                       generator: SectionContentFieldGenerator.new(section: section, style: style)
+
+        - else
+          = render "admin/section_contents/#{generator.style}",
+                   f: f,
+                   generator: generator
+
+        .form-group.mt-5
+          = f.button :submit, class: 'btn btn-block btn-primary'
+        - unless section.new_record?
+          .form-group
+            = link_to admin_page_section_path(id: section.id),
+                      method: :delete,
+                      data: { confirm: t('utilities.alerts.delete_confirmation') },
+                      class: 'btn btn-danger btn-block' do
+              = t('utilities.buttons.delete')
+        .form-group
+          = go_back_button

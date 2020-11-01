@@ -38,11 +38,9 @@ RSpec.describe Faq, type: :model do
     subject { create(:faq) }
 
     it { should validate_presence_of(:category) }
-    it { should validate_presence_of(:description_en) }
     it { should validate_presence_of(:description_zh_tw) }
     it { should validate_presence_of(:position) }
     it { should validate_presence_of(:region) }
-    it { should validate_presence_of(:title_en) }
     it { should validate_presence_of(:title_zh_tw) }
     it { should validate_uniqueness_of(:title).scoped_to(:category_id).case_insensitive }
   end

@@ -2,10 +2,19 @@
 
 require 'rails_helper'
 
-RSpec.describe PagesController, type: :request do
-  before do
-    create(:site_setting)
-    sign_in(create(:user))
+RSpec.describe 'PagesController', type: :request do
+  include_examples 'sign in user'
+
+  describe 'GET pages#about' do
+    before { get about_path }
+
+    include_examples 'has 200 status code'
+  end
+
+  describe 'GET pages#affiliation' do
+    before { get affiliation_path }
+
+    include_examples 'has 200 status code'
   end
 
   describe 'GET pages#homepage' do

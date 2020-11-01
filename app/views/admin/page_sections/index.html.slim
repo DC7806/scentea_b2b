@@ -1,0 +1,24 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.border-0
+      = "#{current_page.name} #{page_header('page_section')}"
+      .m-3.text-right
+        = link_to new_admin_page_section_path, class: 'text-success'
+          i.fa.fa-plus.fa-2x
+
+    ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+      - @sections.each do |section|
+        li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = section.id
+          i.col-1.fa.fa-bars.align-self-center.text-center
+          span.col-9.align-self-center
+            = SectionContentFieldGenerator.new(section: section, style: section.style).name
+          span.col-2.align-self-center.text-right
+            = link_to edit_admin_page_section_path(id: section),
+                      class: 'btn btn-primary btn-sm' do
+              i.fa.fa-pencil
+            = link_to admin_page_section_path(id: section),
+                      method: :delete,
+                      data: { confirm: t('utilities.alerts.delete_confirmation') },
+                      class: 'btn btn-danger btn-sm ml-2' do
+              i.fa.fa-trash
+

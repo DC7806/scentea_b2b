@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Users::SessionsController, type: :request do
+RSpec.describe 'Users::SessionsController', type: :request do
   before do
     Rails.application.env_config['HTTP_ACCEPT_LANGUAGE'] = 'zh-TW'
     create(:site_setting)

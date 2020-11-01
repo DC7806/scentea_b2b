@@ -10,7 +10,10 @@ Rails.application.routes.draw do
                }
 
     root to: 'pages#homepage'
-    get :faq, to: 'pages#faq'
+
+    %w[about affiliation faq].each do |page|
+      get page, action: page.to_sym, controller: 'pages'
+    end
 
     resources :articles, only: %i[index show], param: :slug
 
@@ -33,7 +36,7 @@ Rails.application.routes.draw do
     mount Shrine.presign_endpoint(:cache) => '/s3/params'
     post 'ckeditor_upload/:scope', to: 'ckeditor_images#upload'
 
-    root to: 'pages#index'
+    root to: 'pages#index', region: :domestic
 
     resource :admin_users, only: %i[edit update], as: :user
     resource :site_settings, only: %i[edit update]
@@ -41,6 +44,11 @@ Rails.application.routes.draw do
     scope ':region' , region: /domestic|foreign/ do
       resources :accounts, only: %i[index edit update]
       resources :articles, except: :show
+      resources :pages, only: :index do
+        resources :page_sections, except: :show, path: :sections, as: :sections do
+          collection { patch :sort }
+        end
+      end
 
       %i[carousels faqs faq_categories article_categories].each do |res|
         resources res, except: :show do

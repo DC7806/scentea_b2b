@@ -1,0 +1,10 @@
+- contents.each do |content|
+  section.container.container-indent
+    .row.align-items-center.flex-row-reverse
+      .col-sm-6
+        = image_tag content.image_url(:medium, public: true), class: 'w-100'
+      .col-sm-6.pr-md-5.mt-4.mt-md-0
+        h2
+          = content.title(locale: locale)
+        p
+          = content.description(locale: locale)

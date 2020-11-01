@@ -1,0 +1,54 @@
+@media (max-width: 767px) {
+  .collage {
+    &--main, &--multiple--items {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .collage {
+    &--main, &--multiple {
+      height: 330px;
+    }
+
+    &--multiple {
+      &--upper {
+        padding-bottom: 15px;
+      }
+
+      &--lower {
+        padding-top: 15px;
+      }
+
+      &--items {
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .collage {
+    &--main, &--multiple {
+      height: 450px;
+    }
+
+    &--multiple--items {
+      height: 210px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .collage {
+    &--main, &--multiple {
+      height: 540px;
+    }
+
+    &--multiple--items {
+      height: 255px;
+    }
+  }
+}
