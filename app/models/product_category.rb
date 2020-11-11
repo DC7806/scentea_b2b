@@ -22,6 +22,8 @@
 #
 
 class ProductCategory < ApplicationRecord
+  has_ancestry
+
   extend Mobility
   translates :name, type: :string
 
