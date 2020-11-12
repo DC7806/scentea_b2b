@@ -22,7 +22,7 @@
 #
 
 class ProductCategory < ApplicationRecord
-  has_ancestry
+  has_ancestry orphan_strategy: :restrict
 
   extend Mobility
   translates :name, type: :string

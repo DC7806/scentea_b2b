@@ -1,0 +1,3 @@
+zh-TW:
+  ancestry:
+    cannot_delete_descendants: 尚有子項目不得刪除
