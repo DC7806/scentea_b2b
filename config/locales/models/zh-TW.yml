@@ -80,6 +80,7 @@ zh-TW:
       product_category:
         name_en: 名稱 - 英文
         name_zh_tw: 名稱 - 中文
+        parent_id: 主分類
       site_setting:
         customization_form_url_en: 客製需求表單連結 - 海外
         customization_form_url_zh_tw: 客製需求表單連結 - 台灣

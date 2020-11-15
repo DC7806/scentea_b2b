@@ -80,6 +80,7 @@ en:
       product_category:
         name_en: Name - EN
         name_zh_tw: Name - ZH
+        parent_id: Category
       site_setting:
         customization_form_url_en: Customization Form URL - Foreign
         customization_form_url_zh_tw: Customization Form URL - Taiwan

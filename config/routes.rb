@@ -50,6 +50,10 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :product_categories do
+        collection { patch :sort }
+      end
+
       %i[carousels faqs faq_categories article_categories].each do |res|
         resources res, except: :show do
           collection { patch :sort }
