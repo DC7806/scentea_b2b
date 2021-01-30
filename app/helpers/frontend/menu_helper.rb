@@ -16,5 +16,11 @@ module Frontend
                 rel: 'noopener nofollow'
       end
     end
+
+    def display_locales_menu?
+      return true if visitor? || current_user.account.foreign?
+
+      false
+    end
   end
 end
