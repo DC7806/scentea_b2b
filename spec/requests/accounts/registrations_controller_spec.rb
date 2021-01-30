@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Accounts::RegistrationsController', type: :request do
   before do
+    Rails.application.env_config['HTTP_ACCEPT_LANGUAGE'] = 'zh-TW'
     create(:site_setting)
     sign_in(create(:user, :with_created_account))
   end

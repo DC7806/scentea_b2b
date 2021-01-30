@@ -24,7 +24,12 @@ class ApplicationController < ActionController::Base
   private
 
     def set_locale
-      I18n.locale = params[:locale] || extract_locale
+      I18n.locale = lambda do
+        return params[:locale] || extract_locale if visitor?
+        return 'zh-TW' if current_user.account.domestic?
+
+        params[:locale] || 'en'
+      end.call
     end
 
     def default_url_options
