@@ -6,7 +6,6 @@ en:
       complete:
         title: Bowen TODO（提示帳戶待審）
         registration_complete: Bowen TODO
-        back_to_homepage: Back To Homepage
     edit:
       title: Edit Company Account
   admin_users:

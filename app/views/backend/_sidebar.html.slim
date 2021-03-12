@@ -12,6 +12,21 @@ aside
                         admin_carousels_path(region: region)
       li.sub-menu
         a[href="#"]
+          i.fa.fa-money
+          span = t('activerecord.models.product')
+        ul.sub
+          - available_regions.each do |region|
+            li
+              = link_to t("backend.available_regions.#{region}"), '#'
+              ul.sub
+                li
+                  = link_to t('activerecord.models.product_category'),
+                            admin_product_categories_path(region: region)
+                / li
+                /   = link_to t('activerecord.models.product_category'),
+                /             admin_products_path(region: region)
+      li.sub-menu
+        a[href="#"]
           i.fa.fa-users
           span = t('activerecord.models.account')
         ul.sub

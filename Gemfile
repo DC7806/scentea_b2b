@@ -7,6 +7,7 @@ ruby '2.7.1'
 
 gem 'active_hash', '~> 3.1.0'
 gem 'acts_as_list', '~> 1.0.1'
+gem 'ancestry', '~> 3.2.1'
 gem 'aws-sdk-s3', '~> 1.77.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7.1'

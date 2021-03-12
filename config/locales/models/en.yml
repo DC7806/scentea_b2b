@@ -12,6 +12,7 @@ en:
       faq_category: FAQ Category
       page: Page Management
       page_section: Page Section
+      product_category: Product Category
       user: User
       site_setting: Site Setting
     attributes:
@@ -76,6 +77,10 @@ en:
         slug: Slug
       page_section:
         style: Style
+      product_category:
+        name_en: Name - EN
+        name_zh_tw: Name - ZH
+        parent_id: Category
       site_setting:
         customization_form_url_en: Customization Form URL - Foreign
         customization_form_url_zh_tw: Customization Form URL - Taiwan

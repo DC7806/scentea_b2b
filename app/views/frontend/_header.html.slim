@@ -10,31 +10,50 @@ header.bg-white
             - if site_settings&.logo
               = image_tag site_settings.logo_url(:small),
                           alt: site_settings.site_name
-        .tt-col-obj.tt-obj-menu
-          .tt-desctop-parent-menu.tt-parent-box
-            .tt-desctop-menu
-              nav
-                ul
-                  li.dropdown.position-relative
-                    = link_to t('.links.all_products'), '#'
-                    .dropdown-menu.p-3.rounded-0
-                      .row.tt-col-list
-                        .col
-                          ul.tt-megamenu-submenu
-                            - 3.times do
-                              li.mb-2
-                                = link_to 'fix_me', '#'
-                  li.dropdown
-                    = link_to t('.links.articles'), articles_path
-                  li.dropdown
-                    = link_to t('.links.affiliation'), affiliation_path
-                  li.dropdown
-                    = link_to t('.links.about'), about_path
-                  - if current_user
+        - if current_user && current_user.account.active?
+          .tt-col-obj.tt-obj-menu
+            .tt-desctop-parent-menu.tt-parent-box
+              .tt-desctop-menu
+                nav
+                  ul
+                    - if product_categories.keys.size == 1
+                      li.dropdown.position-relative
+                        = link_to t('.links.all_products'), '#'
+                        / = link_to t('.links.all_products'), products_path
+                        .dropdown-menu.p-3.rounded-0
+                          .row.tt-col-list
+                            .col
+                              ul.tt-megamenu-submenu
+                                - product_categories.each do |parent, children|
+                                  - if parent.has_children?
+                                    - children.each do |child, _|
+                                      li.mb-2
+                                        = link_to child.name, product_category_path(child)
+                    - else
+                      li.dropdown.megamenu
+                        = link_to t('.links.all_products'), '#'
+                        / = link_to t('.links.all_products'), products_path
+                        .dropdown-menu
+                          .row.tt-col-list
+                            - product_categories.each do |parent, children|
+                              - if parent.has_children?
+                                .col-3
+                                  h6.tt-title-submenu
+                                    = parent.name
+                                  ul.tt-megamenu-submenu
+                                    - children.each do |child, _|
+                                      li.mb-2
+                                        = link_to child.name, product_category_path(child)
+
+                    li.dropdown
+                      = link_to t('.links.articles'), articles_path
+                    li.dropdown
+                      = link_to t('.links.affiliation'), affiliation_path
+                    li.dropdown
+                      = link_to t('.links.about'), about_path
                     = customization_form_url_menu(list_styles: 'dropdown')
-                  li.dropdown
-                    = link_to t('.links.faq'), faq_path
-                  - if current_user
+                    li.dropdown
+                      = link_to t('.links.faq'), faq_path
                     li.dropdown.position-relative
                       = link_to t('.links.account_info'), '#'
                       .dropdown-menu.p-3.rounded-0
@@ -47,9 +66,6 @@ header.bg-white
                                   = link_to t('.links.edit_account'), edit_account_path
                                 li.mb-2
                                   = link_to t('utilities.buttons.log_out'), destroy_user_session_path, method: :delete
-                  - else
-                    li.dropdown
-                      = link_to t('utilities.buttons.log_in'), new_user_session_path
 
         .tt-col-obj.tt-obj-options.obj-move-right
           .tt-desctop-parent-account.tt-parent-box
@@ -60,7 +76,7 @@ header.bg-white
                         referrer: 'nofollow noopener'
                 i.icon-g-64
 
-          - if controller_name == 'sessions' || current_user.account.foreign?
+          - if display_locales_menu?
             .tt-desctop-parent-multi.tt-parent-box.header_settings
               .tt-multi-obj.tt-dropdown-obj
                 button.tt-dropdown-toggle

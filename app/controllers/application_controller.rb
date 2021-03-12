@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   helper_method :article_categories
+  helper_method :product_categories
   helper_method :site_settings
+  helper_method :visitor?
 
   protected
 
@@ -22,7 +24,12 @@ class ApplicationController < ActionController::Base
   private
 
     def set_locale
-      I18n.locale = params[:locale] || extract_locale
+      I18n.locale = lambda do
+        return params[:locale] || extract_locale if visitor?
+        return 'zh-TW' if current_user.account.domestic?
+
+        params[:locale] || 'en'
+      end.call
     end
 
     def default_url_options
@@ -44,14 +51,24 @@ class ApplicationController < ActionController::Base
     end
 
     def article_categories
-      @article_categories ||=
-        ArticleCategory.with_articles
-                       .includes(:string_translations)
-                       .where(region: current_account_region)
-                       .order(:position)
+      ArticleCategory.with_articles
+                     .includes(:string_translations)
+                     .where(region: current_account_region)
+                     .order(:position)
+    end
+
+    def product_categories
+      ProductCategory.includes(:string_translations)
+                     .where(region: current_account_region)
+                     .order(:position)
+                     .arrange
     end
 
     def current_account_region
-      current_user.region
+      @current_account_region ||= current_user.region
+    end
+
+    def visitor?
+      !current_user || controller_path == 'accounts/registrations'
     end
 end
