@@ -65,6 +65,11 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.before(:each, type: :request) do
+    Rails.application.env_config['HTTP_ACCEPT_LANGUAGE'] = 'zh-TW'
+    FactoryBot.create(:site_setting)
+  end
+
   # Capybara
   config.include Warden::Test::Helpers
 

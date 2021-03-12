@@ -12,6 +12,7 @@ zh-TW:
       faq_category: FAQ 分類
       page: 分頁管理
       page_section: 分頁內容
+      product_category: 產品分類
       site_setting: 網站設定
       user: 使用者
     attributes:
@@ -76,6 +77,10 @@ zh-TW:
         slug: 網址
       page_section:
         style: 樣式
+      product_category:
+        name_en: 名稱 - 英文
+        name_zh_tw: 名稱 - 中文
+        parent_id: 主分類
       site_setting:
         customization_form_url_en: 客製需求表單連結 - 海外
         customization_form_url_zh_tw: 客製需求表單連結 - 台灣

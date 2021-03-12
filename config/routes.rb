@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
 
     resources :articles, only: %i[index show], param: :slug
+    resources :product_categories, only: :show,
+                                   path: :categories,
+                                   param: :slug
 
     resource :account, only: %i[edit update] do
       scope module: :accounts do
@@ -48,6 +51,10 @@ Rails.application.routes.draw do
         resources :page_sections, except: :show, path: :sections, as: :sections do
           collection { patch :sort }
         end
+      end
+
+      resources :product_categories do
+        collection { patch :sort }
       end
 
       %i[carousels faqs faq_categories article_categories].each do |res|

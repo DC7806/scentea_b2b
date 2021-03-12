@@ -1,0 +1,51 @@
+.d-flex.justify-content-around
+  section.card.col-12.pb-3
+    header.card-header.border-0
+      = page_header('product_category')
+      .m-3.text-right
+        = link_to new_admin_product_category_path, class: 'text-success'
+          i.fa.fa-plus.fa-2x
+    ul.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+      - @categories.each do |parent, children|
+        li data-id = parent.id
+          .list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded
+            i.col-1.fa.fa-bars.align-self-center.text-center
+            span.col-4.align-self-center
+              = "#{t('activerecord.attributes.product_category.name_zh_tw')} : "
+              = parent.name_zh_tw
+            span.col-4.align-self-center
+              = "#{t('activerecord.attributes.product_category.name_en')} : "
+              = parent.name_en
+            span.col-3.text-right
+              = link_to new_admin_product_category_path(parent_id: parent.id),
+                        class: 'btn btn-success btn-sm' do
+                i.fa.fa-plus
+              = link_to edit_admin_product_category_path(id: parent),
+                        class: 'btn btn-primary btn-sm ml-2' do
+                i.fa.fa-pencil
+              = link_to admin_product_category_path(id: parent),
+                        method: :delete,
+                        data: { confirm: t('utilities.alerts.delete_confirmation') },
+                        class: 'btn btn-danger btn-sm ml-2' do
+                i.fa.fa-trash
+
+          - if children.present?
+            ul.ml-5.list-group data-controller = 'simple-sort' data-simple-sort-url = sort_path
+              - children.each do |child, _|
+                li.list-group-item.px-2.mt-2.d-flex.justify-content-between.border.rounded data-id = child.id
+                  i.col-1.fa.fa-bars.align-self-center.text-center
+                  span.col-4.align-self-center
+                    = "#{t('activerecord.attributes.product_category.name_zh_tw')} : "
+                    = child.name_zh_tw
+                  span.col-4.align-self-center
+                    = "#{t('activerecord.attributes.product_category.name_en')} : "
+                    = child.name_en
+                  span.col-3.text-right
+                    = link_to edit_admin_product_category_path(id: child),
+                              class: 'btn btn-primary btn-sm' do
+                      i.fa.fa-pencil
+                    = link_to admin_product_category_path(id: child),
+                              method: :delete,
+                              data: { confirm: t('utilities.alerts.delete_confirmation') },
+                              class: 'btn btn-danger btn-sm ml-2' do
+                      i.fa.fa-trash

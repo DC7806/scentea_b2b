@@ -6,15 +6,6 @@ class FrontendController < ApplicationController
 
   private
 
-    def set_locale
-      I18n.locale = lambda do
-        return params[:locale] || extract_locale unless current_user
-        return 'zh-TW' unless current_user.account.foreign?
-
-        params[:locale] || 'en'
-      end.call
-    end
-
     # TODO: Make it resources specific
     def authenticate_account!
       case current_user.account.status

@@ -3,27 +3,27 @@
 require 'rails_helper'
 
 RSpec.describe 'PagesController', type: :request do
-  include_examples 'sign in user'
+  include_context 'sign in user'
 
-  describe 'GET pages#about' do
+  describe '#about' do
     before { get about_path }
 
     include_examples 'has 200 status code'
   end
 
-  describe 'GET pages#affiliation' do
+  describe '#affiliation' do
     before { get affiliation_path }
 
     include_examples 'has 200 status code'
   end
 
-  describe 'GET pages#homepage' do
+  describe '#homepage' do
     before { get root_path }
 
     include_examples 'has 200 status code'
   end
 
-  describe 'GET pages#faq' do
+  describe '#faq' do
     before { get faq_path }
 
     include_examples 'has 200 status code'
